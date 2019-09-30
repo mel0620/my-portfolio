@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Anton|Oswald:300,400,500,600,700&display=swap');
 @import "./fluid-type.scss";
 
+html, body {
+    font-size: 16px;
+}
+
 html {
     @include fluid-type($min_width, $max_width, $min_font, $max_font);
 }

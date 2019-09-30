@@ -1,3 +1,6 @@
+@import "../../css/fluid-type.scss";
+@import "../../css//quasar.variables.scss";
+
 .hero {
     height: calc(100vh - 60px);
     background-size: cover;
@@ -32,15 +35,18 @@
             font-size: 10rem;
             line-height: 10rem;
             text-align: right;
-            // @include fluid-type($min-width, $max-width, 5rem, 10rem);
+
+            // .text-amber-8 {
+            //     @include fluid-type($min-width, $max-width, 5rem, 10rem);
+            // }
         }
     }
 
     .me {
         position: absolute;
+        right: 0;
         text-align: right;
         padding: 2rem;
-        position: relative;
         z-index: 5;
 
         img {
