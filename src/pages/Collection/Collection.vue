@@ -7,7 +7,7 @@
             </div>
             <div class="collection-wrapper">
                 <div class="collection">
-                    <div ref="collectionItem" class="collection__item" v-ripple v-ripple:blue v-for="(coll, i) in collections" :key="i">
+                    <div ref="collectionItem" class="collection__item" v-ripple v-ripple:blue v-for="(coll, i) in collections" :key="i" @click="$router.push(coll.route)">
                         <q-img spinner-color="black" :ratio="1" contain :src="coll.thumb" class="collection__item-thumb"></q-img>
                         <div class="collection__item-name">{{ coll.name }}</div>
                     </div>
@@ -24,28 +24,34 @@ export default {
         return {
             collections: [
                 {
-                    thumb: 'statics/collection/digima/mockup/website.jpg',
-                    name: 'Website'
+                    thumb: 'statics/collection/digima/mockup/07.jpg',
+                    name: 'Website',
+                    route: '/design-gallery/websites'
                 },
                 {
                     thumb: 'statics/collection/logo/01.jpg',
-                    name: 'Logo'
+                    name: 'Logo',
+                    route: '/design-gallery/'
                 },
                 {
                     thumb: 'statics/collection/buttons/p9.jpg',
-                    name: 'Pin'
+                    name: 'Pin',
+                    route: '/design-gallery/'
                 },
                 {
                     thumb: 'statics/collection/shirts/06.jpg',
-                    name: 'Shirt'
+                    name: 'Shirt',
+                    route: '/design-gallery/'
                 },
                 {
                     thumb: 'statics/collection/tarps/03.jpg',
-                    name: 'Tarp'
+                    name: 'Tarp',
+                    route: '/design-gallery/'
                 },
                 {
                     thumb: 'statics/collection/profile.jpg',
-                    name: 'Others'
+                    name: 'Others',
+                    route: '/design-gallery/'
                 }
             ]
         }
