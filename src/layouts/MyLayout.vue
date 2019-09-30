@@ -31,7 +31,7 @@
       bordered
     >
       <q-list>
-        <q-item-label header>About Me</q-item-label>
+        <q-item-label header>Navigation</q-item-label>
         <q-item clickable @click="$router.push('/')">
           <q-item-section avatar>
             <q-icon name="mdi-home-variant" />
@@ -60,15 +60,6 @@
         </q-item>
         <q-separator></q-separator>
         <q-item-label header>Social Links</q-item-label>
-        <q-item clickable tag="a" target="_blank" href="https://twitter.com/mel_cuneta">
-          <q-item-section avatar>
-            <q-icon name="mdi-twitter" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Twitter</q-item-label>
-            <q-item-label caption>@mel_cuneta</q-item-label>
-          </q-item-section>
-        </q-item>
         <q-item clickable tag="a" target="_blank" href="https://www.facebook.com/rommel.cuneta">
           <q-item-section avatar>
             <q-icon name="mdi-facebook" />
@@ -76,6 +67,15 @@
           <q-item-section>
             <q-item-label>Facebook</q-item-label>
             <q-item-label caption>@RommelCuneta</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable tag="a" target="_blank" href="https://twitter.com/mel_cuneta">
+          <q-item-section avatar>
+            <q-icon name="mdi-twitter" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Twitter</q-item-label>
+            <q-item-label caption>@mel_cuneta</q-item-label>
           </q-item-section>
         </q-item>
       </q-list>

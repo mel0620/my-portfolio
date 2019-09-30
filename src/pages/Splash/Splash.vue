@@ -42,8 +42,8 @@ export default {
 		const timeline 		= new TimelineLite()
 
 		timeline.from(text, .5, {opacity: 0, x: -100})
-				.from('.separator', .5, {opacity: 0, x: -100})
-				.from(skills, .5, {opacity: 0, x: -100})
+				.from('.separator', .5, {opacity: 0, x: -80})
+				.from(skills, .5, {opacity: 0, y: 50})
 				.from(me, .5, {opacity: 0, x: 50})
 	}
 }
