@@ -1,0 +1,29 @@
+// app global css in SCSS form
+@import url('https://fonts.googleapis.com/css?family=Anton|Oswald:300,400,500,600,700&display=swap');
+@import "./fluid-type.scss";
+
+html {
+    @include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
+
+.ff {
+    font-family: $ff1;
+}
+
+.f-anton {
+    font-family: $ff2;
+}
+
+.flip {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.bg-header {
+    background-color: $bgheader;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
