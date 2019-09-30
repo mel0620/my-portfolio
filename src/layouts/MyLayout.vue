@@ -4,7 +4,7 @@
       <q-toolbar style="min-height: 60px">
         <div class="container">
           <div class="row items-center full-width">
-            <div class="row items-center">
+            <div class="row items-center" style="cursor: pointer" @click="$router.push('/')">
               <img width="40" src="statics/SVG/rc.svg" alt="" class="brand img-fluid">
               <q-toolbar-title class="ff">Rommel Cuneta</q-toolbar-title>
             </div>

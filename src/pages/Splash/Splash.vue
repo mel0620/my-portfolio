@@ -3,7 +3,9 @@
 		<div id="scene" class="hero" :style="`background-image: url('${bg_img}')`">
 			<div class="container">
 				<div class="intro-wrapper">
-					<div ref="text" class="f-anton text">WEB<br>DESIGNER</div>
+					<div ref="text" class="f-anton text"><span class="text-h1">I'm a</span>&nbsp;<span class="text-amber-8">WEB<br>DESIGNER</span></div>
+					<q-separator class="separator" dark></q-separator>
+					<div ref="skills" class="text-h6 text-white text-right">Adobe PS | Illustrator | HTML5 | CSS3 | BOOTSTRAP | VUE</div>
 				</div>
 				<div class="me" data-depth="0.2">
 					<img width="500" ref="me" :src="me_img" alt="">
@@ -35,10 +37,14 @@ export default {
 
 		const { me } = this.$refs
 		const { text } = this.$refs
+		const { separator } = this.$refs
+		const { skills } = this.$refs
 		const timeline = new TimelineLite()
 
-		timeline.from(text, 1, { opacity: 0, x: -100 })
-				.from(me, 1, {opacity: 0, x: 50})
+		timeline.from(text, .5, {opacity: 0, x: -100})
+				.from('.separator', .5, {opacity: 0, x: -100})
+				.from(skills, .5, {opacity: 0, x: -100})
+				.from(me, .5, {opacity: 0, x: 50})
 	}
 }
 </script>

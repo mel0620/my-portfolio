@@ -1,5 +1,5 @@
 .hero {
-    height: 100vh;
+    height: calc(100vh - 60px);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -28,7 +28,7 @@
         transform: translateY(-50%);
 
         .text {
-            color: rgba(#fff, .08);
+            color: rgba(#fff, 1);
             font-size: 10rem;
             line-height: 10rem;
             text-align: right;
@@ -44,7 +44,7 @@
         z-index: 5;
 
         img {
-            max-width: 100%;
+            max-width: 500px;
             height: auto;
         }
     }

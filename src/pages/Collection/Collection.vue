@@ -1,5 +1,5 @@
 <template>
-    <q-page padding class="bg-grey-2">
+    <q-page padding class="bg-grey-3">
         <div class="container">
             <div ref="pageTitle">
                 <div class="text-h4 q-mt-lg q-mb-md">Design Gallery</div>
