@@ -24,16 +24,16 @@ export default {
         return {
             collections: [
                 {
-                    thumb: 'statics/collection/buttons/p9.jpg',
-                    name: 'Pin'
-                },
-                {
                     thumb: 'statics/collection/digima/mockup/website.jpg',
                     name: 'Website'
                 },
                 {
                     thumb: 'statics/collection/logo/01.jpg',
                     name: 'Logo'
+                },
+                {
+                    thumb: 'statics/collection/buttons/p9.jpg',
+                    name: 'Pin'
                 },
                 {
                     thumb: 'statics/collection/shirts/06.jpg',
