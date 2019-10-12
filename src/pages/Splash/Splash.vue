@@ -3,9 +3,13 @@
 		<div class="hero" :style="`background-image: url('${bg_img}')`">
 			<div class="container">
 				<div class="intro-wrapper">
-					<div ref="text" class="f-anton text"><span class="text-h1">I'm a</span>&nbsp;<span class="text-amber-8">WEB<br>DESIGNER</span></div>
+					<div ref="text" class="f-anton text">
+						<div class="text-h1">I'm</div>
+						<div class="text-amber-8">ROMMEL</div>
+						<div class="text-amber-8">CUNETA</div>
+					</div>
 					<q-separator class="separator" dark></q-separator>
-					<div ref="skills" class="text-h6 text-white text-right">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+					<div ref="skills" class="text-h6 text-white text-right q-mt-sm">Web Designer | Frontend Developer</div>
 					<!-- <div ref="skills" class="text-h6 text-white text-right">Photoshop | Illustrator | HTML5 | CSS3 | BOOTSTRAP | VUE</div> -->
 				</div>
 				<div class="me" id="scene">
@@ -111,10 +115,12 @@ export default {
 
 			.text {
 				font-size: 6rem;
-				line-height: 4rem;
+				line-height: 6rem;
 
 				.text-h1 {
 					font-size: 4rem;
+					margin-bottom: 0;
+					padding-bottom: 0;
 				}
 			}
 
