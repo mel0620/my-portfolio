@@ -5,8 +5,8 @@
         <div class="container">
           <div class="row items-center full-width">
             <div class="row items-center" style="cursor: pointer" @click="$router.push('/')">
-              <img width="80" src="statics/SVG/rc.svg" alt="" class="brand-desktop img-fluid">
-              <!-- <img v-if="$q.platform.is.mobile" width="45" src="statics/SVG/rc.svg" alt="" class="brand-mobile img-fluid"> -->
+              <!-- <img width="80" src="statics/SVG/rc.svg" alt="" class="brand-desktop img-fluid"> -->
+              <img width="45" src="statics/SVG/rc.svg" alt="" class="brand-mobile img-fluid">
               <!-- <q-toolbar-title class="ff">Rommel Cuneta</q-toolbar-title> -->
             </div>
             <q-space></q-space>
