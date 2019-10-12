@@ -4,7 +4,7 @@
 			<div class="container">
 				<div class="intro-wrapper">
 					<div ref="text" class="f-anton text">
-						<div class="text-h1">I'm</div>
+						<!-- <div class="text-h1">I'm</div> -->
 						<div class="text-amber-8">ROMMEL</div>
 						<div class="text-amber-8">CUNETA</div>
 					</div>

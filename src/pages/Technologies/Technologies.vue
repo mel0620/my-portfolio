@@ -1,7 +1,7 @@
 <template>
     <q-page padding class="technologies">
         <div class="container">
-            <div data-text="section-text-header" :style="`--text-bg: 'TECHNOLOGY'`">{{ section_text }}</div>
+            <div data-text="section-text-header" :style="`--text-bg: 'TECHNOLOGIES'`">{{ section_text }}</div>
 
             <div class="gallery-type-wrapper">
                 <div class="gallery-type">
@@ -18,7 +18,7 @@
 export default {
     data () {
         return {
-            section_text: 'Technology I use',
+            section_text: 'Technologies I use',
             techs: [
                 {
                     name: 'Bootstrap',
