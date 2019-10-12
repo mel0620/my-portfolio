@@ -133,6 +133,12 @@ export default {
             opacity: .04;
             color: #1c1c1c;
         }
+
+        @media screen and (max-width: 500px) { 
+            &::before {
+                font-size: 5rem;
+            }
+        }
     }
 
     .gallery-type-wrapper {
@@ -212,6 +218,22 @@ export default {
                         transform: translateY(0);
                     }
                 }
+            }
+
+            @media screen and (max-width: 500px) {
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 1rem;
+
+                &__item {
+                    &::before {
+                        background-size: 70px;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 321px) {
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 1rem;
             }
         }
     }
