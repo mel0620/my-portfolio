@@ -50,5 +50,87 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./style.scss";
+.hero {
+    height: calc(100vh - 60px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+
+    .container {
+        position: relative;
+        height: 100%;
+    }
+
+    &::before {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, #273238, rgba(#273238,.8));
+    }
+
+    .intro-wrapper {
+        font-weight: normal;
+        position: absolute;
+        top: 50%;
+		transform: translateY(-50%);
+
+        .text {
+            color: rgba(#fff, 1);
+            font-size: 10rem;
+            line-height: 10rem;
+			text-align: right;
+
+            .text-amber-8 {
+                // @include fluid-type($min-width, $max-width, 5rem, 10rem);
+            }
+		}
+    }
+
+    .me {
+        position: absolute;
+        right: 0;
+        text-align: right;
+        padding: 2rem;
+        z-index: 5;
+
+        img {
+            max-width: 500px;
+            height: auto;
+        }
+	}
+	
+	@media screen and(max-width: 500px) {
+		.intro-wrapper {
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			.text {
+				font-size: 6rem;
+				line-height: 4rem;
+
+				.text-h1 {
+					font-size: 4rem;
+				}
+			}
+
+			.separator {
+				margin-top: 1rem;
+			}
+			
+			.text-h6 {
+				font-size: 1rem !important;
+				line-height: 1.5rem;
+			}
+		}
+
+		.me {
+			display: none;
+		}
+	}
+}
 </style>
