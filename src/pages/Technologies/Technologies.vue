@@ -6,7 +6,7 @@
             <div class="gallery-type-wrapper">
                 <div class="gallery-type">
                     <div class="gallery-type__item" v-for="(item, i) in techs" :key="i" :style="`--bg-image: url(${ item.logo })`">
-                        <div class="gallery-type__item-name">{{ item.name }}</div>
+                        <div class="gallery-type__item-name" :style="`--bg-name-color: ${ item.color }`">{{ item.name }}</div>
                     </div>
                 </div>
             </div>
@@ -22,59 +22,73 @@ export default {
             techs: [
                 {
                     name: 'Bootstrap',
-                    logo: 'statics/tech/bootstrap.svg'
+                    logo: 'statics/tech/bootstrap.svg',
+                    color: '#563c7b'
                 },
                 {
                     name: 'Laravel',
-                    logo: 'statics/tech/laravel.svg'
+                    logo: 'statics/tech/laravel.svg',
+                    color: '#ec5144'
                 },
                 {
                     name: 'Vue',
-                    logo: 'statics/tech/vue.svg'
+                    logo: 'statics/tech/vue.svg',
+                    color: '#4ab984'
                 },
                 {
                     name: 'HTML5',
-                    logo: 'statics/tech/html.svg'
+                    logo: 'statics/tech/html.svg',
+                    color: '#e04a2f'
                 },
                 {
                     name: 'CSS3',
-                    logo: 'statics/tech/css.svg'
+                    logo: 'statics/tech/css.svg',
+                    color: '#324ce1'
                 },
                 {
                     name: 'Sass',
-                    logo: 'statics/tech/sass.svg'
+                    logo: 'statics/tech/sass.svg',
+                    color: '#cc629a'
                 },
                 {
                     name: 'Stylus',
-                    logo: 'statics/tech/stylus.svg'
+                    logo: 'statics/tech/stylus.svg',
+                    color: '#333333'
                 },
                 {
                     name: 'jQuery',
-                    logo: 'statics/tech/jquery.svg'
+                    logo: 'statics/tech/jquery.svg',
+                    color: '#21609b'
                 },
                 {
                     name: 'Javascript',
-                    logo: 'statics/tech/javascript.svg'
+                    logo: 'statics/tech/javascript.svg',
+                    color: '#f5df36'
                 },
                 {
                     name: 'Github',
-                    logo: 'statics/tech/github.svg'
+                    logo: 'statics/tech/github.svg',
+                    color: '#000000'
                 },
                 {
                     name: 'Git',
-                    logo: 'statics/tech/git-icon.svg'
+                    logo: 'statics/tech/git-icon.svg',
+                    color: '#da493b'
                 },
                 {
                     name: 'Photoshop',
-                    logo: 'statics/tech/photoshop.svg'
+                    logo: 'statics/tech/photoshop.svg',
+                    color: '#0359e8'
                 },
                 {
                     name: 'Illustrator',
-                    logo: 'statics/tech/illustrator.svg'
+                    logo: 'statics/tech/illustrator.svg',
+                    color: '#fb7e2a'
                 },
                 {
                     name: 'XD',
-                    logo: 'statics/tech/xd.svg'
+                    logo: 'statics/tech/xd.svg',
+                    color: '#fb1bbd'
                 },
             ]
         }
@@ -119,6 +133,7 @@ export default {
 
             &__item {
                 --bg-image: #000;
+                --bg-name-color: $amber-8;
 
                 padding: 3rem;
                 box-shadow: 0 3px 25px 10px rgba(#000, .08);
@@ -160,7 +175,7 @@ export default {
                     left: 0;
                     right: 0;
                     text-align: center;
-                    background-color: $amber-8;
+                    background-color: var(--bg-name-color);
                     width: 100%;
                     color: #fff;
                     padding: 4px 0;
