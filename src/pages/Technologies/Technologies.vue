@@ -41,12 +41,28 @@ export default {
                     logo: 'statics/tech/css.svg'
                 },
                 {
+                    name: 'Sass',
+                    logo: 'statics/tech/sass.svg'
+                },
+                {
+                    name: 'Stylus',
+                    logo: 'statics/tech/stylus.svg'
+                },
+                {
                     name: 'jQuery',
                     logo: 'statics/tech/jquery.svg'
                 },
                 {
                     name: 'Javascript',
                     logo: 'statics/tech/javascript.svg'
+                },
+                {
+                    name: 'Github',
+                    logo: 'statics/tech/github.svg'
+                },
+                {
+                    name: 'Git',
+                    logo: 'statics/tech/git-icon.svg'
                 },
                 {
                     name: 'Photoshop',
