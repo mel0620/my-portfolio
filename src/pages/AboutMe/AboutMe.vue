@@ -44,7 +44,7 @@ export default {
         const scene = new ScrollMagic.Scene({
             triggerElement: '.about-me-wrapper',
             triggerHook: "onLeave",
-            duration: "100%"
+            duration: "50%"
         })
         .setPin(".about-me-wrapper")
         .setTween(tl)
@@ -74,7 +74,7 @@ export default {
         width: 100px;
         height: 100px;
         margin: auto;
-        border: 3px solid #888888;
+        border: 3px solid #555555;
         top: 0; right: 0; bottom: 0; left: 0;
         z-index: 0;
 

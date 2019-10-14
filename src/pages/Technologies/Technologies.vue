@@ -119,14 +119,14 @@ export default {
         const scene = new ScrollMagic.Scene({
             triggerElement: '.technologies',
             triggerHook: "onLeave",
-            duration: "100%"
+            duration: "50%"
         })
-        .setPin(".technologies")
+        // .setPin(".technologies")
         .setTween(tl)
         .addTo(controller);
 
         const scene2 = new ScrollMagic.Scene({
-            triggerElement: '.gallery-type'
+            triggerElement: '.gallery-type-wrapper'
         })
         .setTween(tl2)
         .addTo(controller)
