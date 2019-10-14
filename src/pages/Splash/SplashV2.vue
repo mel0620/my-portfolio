@@ -79,6 +79,7 @@ export default {
             font-weight: 600;
             color: #1a1a1a;
             letter-spacing: 4px;
+            white-space: nowrap;
         }
         
         .underline {
@@ -99,13 +100,34 @@ export default {
             color: #505050;
         }
 
+        @media screen and (max-width: 800px){
+            .name {
+                font-size: 6rem;
+                line-height: 6rem;
+            }
+
+            .underline {
+                top: 75%;
+                left: 50%;
+                transform: translate(-50%, -75%);
+            }
+
+            .titles {
+                margin-top: 1rem;
+                font-size: 1.5rem;
+            }
+        }
+
         @media screen and (max-width: 500px){
             .name {
-                font-size: 5rem;
-                line-height: 5rem;
+                font-size: 3rem;
+                line-height: 3rem;
             }
             .underline {
                 margin-top: 10px;
+                top: 55%;
+                left: 50%;
+                transform: translate(-50%, -55%);
             }
             .titles {
                 margin-top: 1rem;
@@ -115,12 +137,18 @@ export default {
 
         @media screen and (max-width: 321px){
             .name {
-                font-size: 4rem;
-                line-height: 4rem;
+                font-size: 2rem;
+                line-height: 2rem;
+            }
+            .underline {
+                margin-top: 10px;
+                top: 45%;
+                left: 50%;
+                transform: translate(-50%, -45%);
             }
             .titles {
-                margin-top: 1rem;
-                font-size: 1rem;
+                margin-top: 0.875rem;
+                font-size: 0.875rem;
             }
         }
     }
