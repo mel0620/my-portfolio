@@ -7,6 +7,7 @@
                 <div ref="title" class="titles">Web Designer | Frontend Developer</div>
             </div>
         </div>
+        <!-- <img width="500" class="me" src="statics/me.png" alt=""> -->
     </q-page>
 </template>
 
@@ -25,8 +26,8 @@ export default {
         const { title }     = this.$refs;
         const timeline 		= new TimelineLite()
 
-        timeline.to(slide, .6, {width: '100%'})
-                .to(slide, .6, {width: 0, right: 0, ease: Circ.easeOut})
+        timeline.to(slide, .8, {width: '100%'})
+                .to(slide, .8, {width: 0, right: 0, ease: Circ.easeOut})
                 .fromTo(name, .6, {y: -10, opacity: 0}, {y: 0, opacity: 1})
                 .fromTo(title, .3, {y: 10, opacity: 0}, {y: 0, opacity: 1})
 
@@ -40,10 +41,25 @@ export default {
     background-attachment: fixed;
     display: flex;
     align-items: center;
+    position: relative;
+    overflow: hidden;
     
+    .me {
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translateY(100px);
+        max-width: 100%;
+        height: auto;
+        z-index: 2;
+        filter: grayscale(100%);
+        opacity: .5;
+    }
+
     .hero-v2 {
         text-align: center;
         position: relative;
+        z-index: 5;
 
         .slide-overlay {
             position: absolute;

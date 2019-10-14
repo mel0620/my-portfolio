@@ -22,6 +22,26 @@ export default {
             section_text: 'Technologies I use',
             techs: [
                 {
+                    name: 'HTML5',
+                    logo: '../../statics/tech/html.svg',
+                    color: '#e04a2f'
+                },
+                {
+                    name: 'CSS3',
+                    logo: '../../statics/tech/css.svg',
+                    color: '#324ce1'
+                },
+                {
+                    name: 'Sass',
+                    logo: '../../statics/tech/sass.svg',
+                    color: '#cc629a'
+                },
+                {
+                    name: 'Stylus',
+                    logo: '../../statics/tech/stylus.svg',
+                    color: '#333333'
+                },
+                {
                     name: 'Bootstrap',
                     logo: '../../statics/tech/bootstrap.svg',
                     color: '#563c7b'
@@ -45,26 +65,6 @@ export default {
                     name: 'Vuetify',
                     logo: '../../statics/tech/vuetify.svg',
                     color: '#3197f3'
-                },
-                {
-                    name: 'HTML5',
-                    logo: '../../statics/tech/html.svg',
-                    color: '#e04a2f'
-                },
-                {
-                    name: 'CSS3',
-                    logo: '../../statics/tech/css.svg',
-                    color: '#324ce1'
-                },
-                {
-                    name: 'Sass',
-                    logo: '../../statics/tech/sass.svg',
-                    color: '#cc629a'
-                },
-                {
-                    name: 'Stylus',
-                    logo: '../../statics/tech/stylus.svg',
-                    color: '#333333'
                 },
                 {
                     name: 'jQuery',
