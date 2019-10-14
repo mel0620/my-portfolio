@@ -135,8 +135,16 @@ export default {
         }
 
         @media screen and (max-width: 500px) { 
+            font-size: 2.5rem;
+
             &::before {
-                font-size: 5rem;
+                font-size: 4rem;
+            }
+        }
+
+        @media screen and (max-width: 321px) { 
+            &::before {
+                font-size: 3rem;
             }
         }
     }

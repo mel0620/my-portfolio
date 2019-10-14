@@ -30,8 +30,30 @@
         .titles {
             font-family: $ff1;
             letter-spacing: 4px;
-            font-size: 24px;
+            font-size: 1.5rem;
             color: #505050;
+        }
+
+        @media screen and (max-width: 500px){
+            .name {
+                font-size: 6rem;
+                line-height: 6rem;
+            }
+            .titles {
+                margin-top: 1rem;
+                font-size: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 321px){
+            .name {
+                font-size: 4rem;
+                line-height: 4rem;
+            }
+            .titles {
+                margin-top: 1rem;
+                font-size: 1rem;
+            }
         }
     }
 }
