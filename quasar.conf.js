@@ -63,7 +63,9 @@ module.exports = function (ctx) {
         'QSpace',
         'QSeparator',
         'QImg',
-        'QSpinnerIos'
+        'QSpinnerIos',
+        'QPageSticky',
+        'QAvatar'
       ],
 
       directives: [

@@ -10,7 +10,7 @@
             @click="dialog = true"
         />
         <q-dialog v-model="dialog" maximized>
-            <q-card class="bg-blue-grey-9 full-width full-height">
+            <q-card class="full-width full-height">
                 <div class="row justify-end">
                     <q-btn icon="mdi-close" flat round v-close-popup></q-btn>
                 </div>

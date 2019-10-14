@@ -1,12 +1,12 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated reveal class="main-header bg-blue-grey-10">
+    <q-header reveal class="main-header bg-grey-2 text-black">
       <q-toolbar style="min-height: 60px">
         <div class="container">
           <div class="row items-center full-width">
             <div class="row items-center" style="cursor: pointer" @click="$router.push('/')">
               <!-- <img width="80" src="statics/SVG/rc.svg" alt="" class="brand-desktop img-fluid"> -->
-              <img width="45" src="statics/SVG/rc.svg" alt="" class="brand-mobile img-fluid">
+              <img width="30" src="statics/rc.svg" alt class="brand-mobile img-fluid" />
               <!-- <q-toolbar-title class="ff">Rommel Cuneta</q-toolbar-title> -->
             </div>
             <q-space></q-space>
@@ -25,12 +25,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      content-class="bg-grey-2"
-      side="right"
-      bordered
-    >
+    <q-drawer overlay v-model="leftDrawerOpen" content-class="bg-grey-2" side="right">
       <q-list>
         <q-item-label header>Navigation</q-item-label>
         <q-item clickable @click="$router.push('/')">
@@ -91,26 +86,28 @@
 <script>
 import FullNav from "../components/FullNav";
 export default {
-  name: 'MyLayout',
+  name: "MyLayout",
   components: {
     FullNav
   },
-  data () {
+  data() {
     return {
-      leftDrawerOpen: false
-    }
+      leftDrawerOpen: false,
+    };
   }
-}
+};
 </script>
 
 <style lang="scss">
 .main-header {
+	// border-bottom: 1px solid #eaeaea;
+	box-shadow: 0 2px 16px rgba(#000, .12);
   .brand-desktop {
     position: absolute;
     bottom: -35px;
     z-index: 5;
     border-radius: 100%;
-    box-shadow: 0 0 8px rgba(#000, .3);
+    box-shadow: 0 0 8px rgba(#000, 0.3);
   }
 }
 </style>

@@ -27,6 +27,10 @@ html {
     transform: scaleX(-1);
 }
 
+.color-invert {
+    filter: invert(1);
+}
+
 .bg-header {
     background-color: $bgheader;
 }
