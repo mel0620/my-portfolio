@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header reveal class="main-header bg-grey-2 text-black">
+    <q-header reveal class="main-header text-black">
       <q-toolbar style="min-height: 60px">
         <div class="container">
           <div class="row items-center full-width">
@@ -101,8 +101,9 @@ export default {
 <style lang="scss">
 .main-header {
 	// border-bottom: 1px solid #eaeaea;
-	box-shadow: 0 2px 16px rgba(#000, .12);
+	// box-shadow: 0 2px 16px rgba(#000, .12);
 	transition: .3s all ease-in-out;
+	background-color: $grey-2;
 	&:hover {
 		filter: invert(1);
 	}
