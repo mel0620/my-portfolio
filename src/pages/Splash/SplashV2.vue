@@ -101,8 +101,11 @@ export default {
 
         @media screen and (max-width: 500px){
             .name {
-                font-size: 6rem;
-                line-height: 6rem;
+                font-size: 5rem;
+                line-height: 5rem;
+            }
+            .underline {
+                margin-top: 10px;
             }
             .titles {
                 margin-top: 1rem;
