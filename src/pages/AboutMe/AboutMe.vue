@@ -3,6 +3,7 @@
         <div class="container">
             <div class="section-title" data-text="section-text-header" :style="`--text-bg: 'ABOUT ME'`">{{ section_text }}</div>
             <div class="about-me">
+                <div class="box"></div>
                 <div class="portrait" :style="`background-image: url(${portrait})`">
                     <!-- <img class="img-fluid" src="statics/me.png" alt="Rommel Cuneta's Photo"> -->
                 </div>
@@ -26,23 +27,19 @@ export default {
             portrait: 'statics/me.png'
         }
     },
-    methods: {
-        // updatePercentage() {
-        //     tl.progress();
-        // }
-    },
     mounted () {
         ScrollOut();
 
         var tl = new TimelineMax({onUpdate:updatePercentage});
-        // var tl2 = new TimelineMax();
+        var tl2 = new TimelineMax();
         const controller = new ScrollMagic.Controller();
 
         tl.from(".section-title", .5, {y: 50, opacity: 0});
-        tl.from(".portrait", 1, {x: 50, rotation: 20, opacity: 0}, "=-.1");
+        tl.from(".portrait", 1, {x: 50, opacity: 0});
         tl.from(".paragraph", 1, {x: -50, opacity: 0})
 
-        // tl2.from(".box")
+        tl2.from(".box", 1, {opacity: 0, scale: 0})
+        tl2.to(".box", 1, {left: '-62%', bottom: '-7%', scale: 4})
 
         const scene = new ScrollMagic.Scene({
             triggerElement: '.about-me-wrapper',
@@ -52,6 +49,12 @@ export default {
         .setPin(".about-me-wrapper")
         .setTween(tl)
         .addTo(controller);
+
+        const scene2 = new ScrollMagic.Scene({
+            triggerElement: '.section-title'
+        })
+        .setTween(tl2)
+        .addTo(controller)
 
         function updatePercentage() {
             tl.progress();
@@ -64,12 +67,29 @@ export default {
 .about-me-wrapper {
     padding: 24px 0;
     padding-bottom: 5rem;
+    position: relative;
+
+    .box {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        border: 3px solid #888888;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: 0;
+
+        @media screen and (max-width: 500px) {
+            opacity: 0 !important;
+        }
+    }
 
     .about-me {
         padding-top: 3rem;
         display: grid;
         grid-template-columns: auto auto;
         grid-gap: 2rem;
+        position: relative;
+        z-index: 1;
 
         .portrait {
             width: 400px;
