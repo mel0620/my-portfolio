@@ -33,7 +33,6 @@ export default {
                 .to(underline, .6, {width: '100%', opacity: .12})
                 .fromTo(name, .6, {y: 10, opacity: 0}, {y: 0, opacity: 1})
                 .fromTo(title, .3, {y: -10, opacity: 0}, {y: 0, opacity: 1}, "=-.3")
-
     }
 }
 </script>
@@ -71,6 +70,7 @@ export default {
             // right: 0;
             // left: 0;
             background-color: #1c1c1c;
+            z-index: 5;
         }
 
         .name {
