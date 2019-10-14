@@ -24,6 +24,7 @@
             font-family: $ff1;
             font-weight: 600;
             color: #1a1a1a;
+            letter-spacing: 4px;
         }
 
         .titles {
