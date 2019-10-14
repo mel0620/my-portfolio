@@ -1,8 +1,8 @@
 <template>
     <section class="about-me-wrapper">
         <div class="container">
-            <div data-scroll data-text="section-text-header" :style="`--text-bg: 'ABOUT ME'`">{{ section_text }}</div>
-            <div class="about-me" data-scroll>
+            <div class="section-title" data-text="section-text-header" :style="`--text-bg: 'ABOUT ME'`">{{ section_text }}</div>
+            <div class="about-me">
                 <div class="portrait" :style="`background-image: url(${portrait})`">
                     <!-- <img class="img-fluid" src="statics/me.png" alt="Rommel Cuneta's Photo"> -->
                 </div>
@@ -18,6 +18,7 @@
 
 <script>
 import ScrollOut from "scroll-out";
+import {TweenMax, Power2, TimelineMax} from "gsap/TweenMax";
 export default {
     data () {
         return {
@@ -25,8 +26,36 @@ export default {
             portrait: 'statics/me.png'
         }
     },
+    methods: {
+        // updatePercentage() {
+        //     tl.progress();
+        // }
+    },
     mounted () {
         ScrollOut();
+
+        var tl = new TimelineMax({onUpdate:updatePercentage});
+        // var tl2 = new TimelineMax();
+        const controller = new ScrollMagic.Controller();
+
+        tl.from(".section-title", .5, {y: 50, opacity: 0});
+        tl.from(".portrait", 1, {x: 50, rotation: 20, opacity: 0}, "=-.1");
+        tl.from(".paragraph", 1, {x: -50, opacity: 0})
+
+        // tl2.from(".box")
+
+        const scene = new ScrollMagic.Scene({
+            triggerElement: '.about-me-wrapper',
+            triggerHook: "onLeave",
+            duration: "100%"
+        })
+        .setPin(".about-me-wrapper")
+        .setTween(tl)
+        .addTo(controller);
+
+        function updatePercentage() {
+            tl.progress();
+        }
     }
 }
 </script>
