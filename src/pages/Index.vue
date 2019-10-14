@@ -7,8 +7,8 @@
 
 <script>
 const Splash = () => import(/*webpackChunkname: "splash"*/ "./Splash/Splash.vue");
-const SplashV2 = () => import(/*webpackChunkname: "splash"*/ "./Splash/SplashV2.vue");
-const Technologies = () => import(/*webpackChunkname: "tech"*/ "./Technologies/Technologies.vue");
+import SplashV2 from "./Splash/SplashV2.vue";
+import Technologies from "./Technologies/Technologies.vue";
 
 export default {
 	name: 'PageIndex',

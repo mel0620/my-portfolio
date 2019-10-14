@@ -172,6 +172,7 @@ export default {
                 position: relative;
                 min-height: 150px;
                 overflow: hidden;
+                transition: .3s all ease-in-out;
 
                 &::before {
                     content: ' ';
@@ -189,7 +190,7 @@ export default {
 
                 &::after {
                     content: ' ';
-                    background-color: rgba(#000, .3);
+                    // background-color: rgba(#000, .05);
                     position: absolute;
                     top: 0;
                     right: 0;
@@ -216,6 +217,8 @@ export default {
                 }
 
                 &:hover {
+                    background-color: #fff;
+                    box-shadow: 0 3px 20px 5px rgba(#000, .08);
 
                     &::before {
                         transform: scale(1.1);
