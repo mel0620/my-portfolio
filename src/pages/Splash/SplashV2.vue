@@ -4,6 +4,7 @@
             <div ref="hero" class="hero-v2">
                 <div ref="slide" class="slide-overlay"></div>
                 <div ref="name" class="name">ROMMEL CUNETA</div>
+                <div ref="underline" class="underline"></div>
                 <div ref="title" class="titles">Web Designer | Frontend Developer</div>
             </div>
         </div>
@@ -23,11 +24,13 @@ export default {
 
         const { slide }     = this.$refs;
         const { name }      = this.$refs;
+        const { underline }      = this.$refs;
         const { title }     = this.$refs;
         const timeline 		= new TimelineLite()
 
         timeline.to(slide, .8, {width: '100%'})
                 .to(slide, .8, {width: 0, right: 0, ease: Circ.easeOut})
+                .to(underline, .4, {width: '100%'})
                 .fromTo(name, .6, {y: -10, opacity: 0}, {y: 0, opacity: 1})
                 .fromTo(title, .3, {y: 10, opacity: 0}, {y: 0, opacity: 1})
 
@@ -76,6 +79,17 @@ export default {
             font-weight: 600;
             color: #1a1a1a;
             letter-spacing: 4px;
+        }
+        
+        .underline {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -80%);
+            height: 1px;
+            background-color: rgba(#000, .12);
+            // width: 100%;
+            margin-bottom: 10px;
         }
 
         .titles {
