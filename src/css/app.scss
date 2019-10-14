@@ -1,5 +1,6 @@
 // app global css in SCSS form
 @import url('https://fonts.googleapis.com/css?family=Anton|Oswald:300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
 @import "./fluid-type.scss";
 
 html, body {
@@ -58,3 +59,42 @@ html {
     opacity: 0;
     transform: translateY(-20px);
 } //END SCROLLOUT
+
+[data-text="section-text-header"] {
+    position: relative;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+    // text-transform: uppercase;
+    color: $text-dark;
+    font-family: $ff1;
+    margin: 3rem 0;
+    color: #1c1c1c;
+    white-space: nowrap;
+
+    &::before {
+        content: var(--text-bg);
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -60%);
+        font-size: 6rem;
+        font-weight: 700;
+        opacity: .03;
+        color: #1c1c1c;
+    }
+
+    @media screen and (max-width: 500px) { 
+        font-size: 2rem;
+
+        &::before {
+            font-size: 4rem;
+        }
+    }
+
+    @media screen and (max-width: 321px) { 
+        &::before {
+            font-size: 3rem;
+        }
+    }
+}
