@@ -29,8 +29,8 @@ export default {
         const timeline 		= new TimelineLite()
 
         timeline.to(slide, .8, {width: '100%'})
-                .to(slide, .8, {width: 0, right: 0, ease: Circ.easeOut})
-                .to(underline, .4, {width: '100%'})
+                .to(slide, .6, {width: 0, right: 0, ease: Circ.easeOut})
+                .to(underline, .6, {width: '100%'})
                 .fromTo(name, .6, {y: -10, opacity: 0}, {y: 0, opacity: 1})
                 .fromTo(title, .3, {y: 10, opacity: 0}, {y: 0, opacity: 1})
 
