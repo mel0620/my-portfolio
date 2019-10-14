@@ -87,7 +87,7 @@ export default {
         padding-top: 3rem;
         display: grid;
         grid-template-columns: auto auto;
-        grid-gap: 2rem;
+        grid-gap: 2.5rem;
         position: relative;
         z-index: 1;
 

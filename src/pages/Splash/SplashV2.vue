@@ -30,9 +30,9 @@ export default {
 
         timeline.to(slide, .8, {width: '100%'})
                 .to(slide, .6, {width: 0, right: 0, ease: Circ.easeOut})
-                .to(underline, .6, {width: '100%'})
-                .fromTo(name, .6, {y: -10, opacity: 0}, {y: 0, opacity: 1})
-                .fromTo(title, .3, {y: 10, opacity: 0}, {y: 0, opacity: 1})
+                .to(underline, .6, {width: '100%', opacity: .12})
+                .fromTo(name, .6, {y: 10, opacity: 0}, {y: 0, opacity: 1})
+                .fromTo(title, .3, {y: -10, opacity: 0}, {y: 0, opacity: 1})
 
     }
 }
@@ -88,7 +88,7 @@ export default {
             left: 50%;
             transform: translate(-50%, -80%);
             height: 1px;
-            background-color: rgba(#000, .12);
+            background-color: #1c1c1c;
             // width: 100%;
             margin-bottom: 10px;
         }
