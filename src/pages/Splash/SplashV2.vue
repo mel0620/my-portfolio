@@ -1,13 +1,38 @@
 <template>
     <q-page class="splash-v2">
         <div class="container">
-            <div class="hero-v2">
-                <div class="name">ROMMEL CUNETA</div>
-                <div class="titles">Web Designer | Frontend Developer</div>
+            <div ref="hero" class="hero-v2">
+                <div ref="slide" class="slide-overlay"></div>
+                <div ref="name" class="name">ROMMEL CUNETA</div>
+                <div ref="title" class="titles">Web Designer | Frontend Developer</div>
             </div>
         </div>
     </q-page>
 </template>
+
+<script>
+import {TweenMax, Power2, TimelineLite} from "gsap/TweenMax";
+export default {
+    data (){
+        return {
+
+        }
+    },
+    mounted () {
+
+        const { slide }     = this.$refs;
+        const { name }     = this.$refs;
+        const { title }     = this.$refs;
+        const timeline 		= new TimelineLite()
+
+        timeline.to(slide, .6, {width: '100%'})
+                .to(slide, .6, {width: 0, right: 0})
+                .to(name, .6, {opacity: 1})
+                .to(title, .3, {opacity: 1})
+
+    }
+}
+</script>
 
 <style lang="scss">
 .splash-v2 {
@@ -18,6 +43,16 @@
     
     .hero-v2 {
         text-align: center;
+        position: relative;
+
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            // right: 0;
+            // left: 0;
+            background-color: #1c1c1c;
+        }
 
         .name {
             font-size: 8rem;
@@ -25,6 +60,7 @@
             font-weight: 600;
             color: #1a1a1a;
             letter-spacing: 4px;
+            opacity: 0;
         }
 
         .titles {
@@ -32,6 +68,7 @@
             letter-spacing: 4px;
             font-size: 1.5rem;
             color: #505050;
+            opacity: 0;
         }
 
         @media screen and (max-width: 500px){
