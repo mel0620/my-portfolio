@@ -102,12 +102,16 @@ export default {
 .main-header {
 	// border-bottom: 1px solid #eaeaea;
 	box-shadow: 0 2px 16px rgba(#000, .12);
-  .brand-desktop {
-    position: absolute;
-    bottom: -35px;
-    z-index: 5;
-    border-radius: 100%;
-    box-shadow: 0 0 8px rgba(#000, 0.3);
-  }
+	transition: .3s all ease-in-out;
+	&:hover {
+		filter: invert(1);
+	}
+	.brand-desktop {
+		position: absolute;
+		bottom: -35px;
+		z-index: 5;
+		border-radius: 100%;
+		box-shadow: 0 0 8px rgba(#000, 0.3);
+	}
 }
 </style>

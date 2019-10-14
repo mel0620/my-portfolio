@@ -1,9 +1,9 @@
 <template>
     <q-page padding class="technologies">
         <div class="container">
-            <div data-text="section-text-header" :style="`--text-bg: 'TECHNOLOGIES'`">{{ section_text }}</div>
+            <div data-scroll data-text="section-text-header" :style="`--text-bg: 'TECHNOLOGIES'`">{{ section_text }}</div>
 
-            <div class="gallery-type-wrapper">
+            <div data-scroll class="gallery-type-wrapper">
                 <div class="gallery-type">
                     <div class="gallery-type__item" v-for="(item, i) in techs" :key="i" :style="`--bg-image: url(${ item.logo })`">
                         <div class="gallery-type__item-name" :style="`--bg-name-color: ${ item.color }`">{{ item.name }}</div>
@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import ScrollOut from "scroll-out";
 export default {
     data () {
         return {
@@ -102,6 +103,9 @@ export default {
                 },
             ]
         }
+    },
+    mounted () {
+        ScrollOut();
     }
 }
 </script>

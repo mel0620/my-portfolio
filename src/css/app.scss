@@ -39,3 +39,18 @@ html {
     max-width: 100%;
     height: auto;
 }
+
+//SCROLLOUT
+[data-scroll] {
+    transition: all 1s;
+}
+
+[data-scroll="in"] {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-scroll="out"] {
+    opacity: 0;
+    transform: translateY(-20px);
+} //END SCROLLOUT
