@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import {TweenMax, Power2, TimelineLite} from "gsap/TweenMax";
+import {TweenMax, Power2, Elastic, TimelineLite} from "gsap/TweenMax";
 export default {
     data (){
         return {
@@ -26,9 +26,9 @@ export default {
         const timeline 		= new TimelineLite()
 
         timeline.to(slide, .6, {width: '100%'})
-                .to(slide, .6, {width: 0, right: 0})
-                .to(name, .6, {opacity: 1})
-                .to(title, .3, {opacity: 1})
+                .to(slide, .6, {width: 0, right: 0, ease: Circ.easeOut})
+                .fromTo(name, .6, {y: -10, opacity: 0}, {y: 0, opacity: 1})
+                .fromTo(title, .3, {y: 10, opacity: 0}, {y: 0, opacity: 1})
 
     }
 }
@@ -60,7 +60,6 @@ export default {
             font-weight: 600;
             color: #1a1a1a;
             letter-spacing: 4px;
-            opacity: 0;
         }
 
         .titles {
@@ -68,7 +67,6 @@ export default {
             letter-spacing: 4px;
             font-size: 1.5rem;
             color: #505050;
-            opacity: 0;
         }
 
         @media screen and (max-width: 500px){
