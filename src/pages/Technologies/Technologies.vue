@@ -1,7 +1,7 @@
 <template>
     <section class="technologies">
         <div class="container">
-            <div class="section-title" data-text="section-text-header" :style="`--text-bg: 'TECHNOLOGIES'`">{{ section_text }}</div>
+            <div class="section-title" data-text="section-text-header" :style="`--text-bg: 'MY SKILLS'`">{{ section_text }}</div>
 
             <div class="gallery-type-wrapper">
                 <div class="gallery-type">
@@ -31,7 +31,7 @@ import {TweenMax, Power2, TimelineMax} from "gsap/TweenMax";
 export default {
     data () {
         return {
-            section_text: 'Technologies I use',
+            section_text: 'My Skills',
             techs: [
                 {
                     name: 'HTML5',
