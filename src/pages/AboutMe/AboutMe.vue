@@ -8,7 +8,7 @@
                     <!-- <img class="img-fluid" src="statics/me.png" alt="Rommel Cuneta's Photo"> -->
                 </div>
                 <div class="paragraph">
-                    <p class="paragraph__item">Hi, I am Rommel Cuneta, a Web Designer and a Frontend Developer. I'm a graduate of Bachelor of Science in Information Technology. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, optio!</p>
+                    <p class="paragraph__item">Hi, I am Rommel Cuneta, I'm a Web Designer and a Frontend Developer. I'm a graduate of Bachelor of Science in Information Technology. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, optio!</p>
                 </div>
                 <!-- <div class="paragraph">
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, eius dolorum? Dolorem, dignissimos deserunt. Et quam quas magnam, at cupiditate saepe dicta, atque minima tempore inventore dolore ut quaerat corporis.</p>
