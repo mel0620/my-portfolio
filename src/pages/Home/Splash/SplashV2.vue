@@ -3,7 +3,7 @@
         <div class="container">
             <div class="hero-v2">
                 <div class="name-wrapper">
-                    <div ref="name" class="name">Rommel Cuneta</div>
+                    <div class="name">Rommel Cuneta</div>
                     <div class="name-overlay"></div>
                 </div>
                 <div class="titles-wrapper">
@@ -24,12 +24,11 @@ export default {
         }
     },
     mounted () {
-        const { name }      = this.$refs;
         const timeline 		= new TimelineLite()
 
         timeline.to(".name-overlay", .6, {width: '100%'})
                 .to(".name-overlay", .6, {width: 0, right: 0, ease: Circ.easeOut})
-                .fromTo(name, .2, {opacity: 0}, {opacity: 1})
+                .fromTo(".name", .2, {opacity: 0}, {opacity: 1})
                 .to(".title-overlay", .6, {width: '100%'}, "=-.2")
                 .to(".title-overlay", .6, {left: 0, width: 0, ease: Circ.easeOut})
                 .fromTo(".titles", .3, {opacity: 0}, {opacity: 1})
@@ -92,7 +91,7 @@ export default {
         .titles-wrapper {
             position: relative;
             width: max-content;
-            margin: 0 auto;
+            margin: -1rem auto 0;
 
             .titles {
                 font-family: $ff1;
@@ -110,52 +109,50 @@ export default {
                 z-index: 5;
             }
         }
-        
-        .underline {
-            // position: absolute;
-            // top: 80%;
-            // left: 50%;
-            // transform: translate(-50%, -80%);
-            margin: auto;
-            text-align: center;
-            height: 1px;
-            background-color: #1c1c1c;
-            opacity: 0;
-            // width: 100%;
-            // margin-bottom: 10px;
-        }
 
         @media screen and (max-width: 800px){
-            .name {
-                font-size: 6rem;
-                // line-height: 6rem;
+            .name-wrapper {
+                .name {
+                    font-size: 6rem;
+                }
             }
-
-            .titles {
-                margin-top: 1rem;
-                font-size: 1.5rem;
+            
+            .titles-wrapper {
+                .titles {
+                    margin-top: 1rem;
+                    font-size: 1.5rem;
+                }
             }
         }
 
         @media screen and (max-width: 500px){
-            .name {
-                font-size: 3rem;
-                // line-height: 3rem;
+            .name-wrapper {
+                .name {
+                    font-size: 3rem;
+                    // line-height: 3rem;
+                }
             }
-            .titles {
-                margin-top: 1rem;
-                font-size: 1rem;
+            .titles-wrapper {
+                width: 100%;
+                .titles {
+                    margin-top: 1rem;
+                    font-size: 1rem;
+                }
             }
         }
 
         @media screen and (max-width: 321px){
-            .name {
-                font-size: 2rem;
-                // line-height: 2rem;
+            .name-wrapper {
+                .name {
+                    font-size: 2rem;
+                    // line-height: 2rem;
+                }
             }
-            .titles {
-                margin-top: 0.875rem;
-                font-size: 0.875rem;
+            .titles-wrapper {
+                .titles {
+                    margin-top: 0.875rem;
+                    font-size: 0.875rem;
+                }
             }
         }
     }
