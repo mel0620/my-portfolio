@@ -72,6 +72,18 @@ html {
     margin: 3rem 0;
     color: #1c1c1c;
     white-space: nowrap;
+    z-index: 50;
+
+    [data-line="border-bottom"] {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 80px;
+        transform: translateX(-50%);
+        height: 2px;
+        margin: auto;
+        background-color: orange;
+    }
 
     &::before {
         content: var(--text-bg);

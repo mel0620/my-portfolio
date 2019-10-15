@@ -1,7 +1,8 @@
 <template>
     <section class="about-me-wrapper">
+        <!-- <div class="vertical-text">ABOUT ME</div> -->
         <div class="container">
-            <div class="section-title" data-text="section-text-header" :style="`--text-bg: 'ABOUT ME'`">{{ section_text }}</div>
+            <div class="section-title" data-text="section-text-header" :style="`--text-bg: ''`">{{ section_text }} <span class="bottom-line--tech" data-line="border-bottom"></span></div>
             <div class="about-me">
                 <div class="box"></div>
                 <div class="portrait" :style="`background-image: url(${portrait})`">
@@ -31,23 +32,25 @@ export default {
         }
     },
     mounted () {
-        ScrollOut();
+        // ScrollOut();
 
         var tl = new TimelineMax({onUpdate:updatePercentage});
         var tl2 = new TimelineMax();
         const controller = new ScrollMagic.Controller();
 
-        tl.from(".section-title", .5, {y: 50, opacity: 0});
+        tl.from(".section-title", 1, {y: 50, opacity: 0});
+        tl.from(".bottom-line--tech", .6, {opacity: 0, color: '#1c1c1c', width: 0});
         tl.from(".portrait", 1, {x: 50, opacity: 0});
         tl.from(".paragraph", 1, {x: -50, opacity: 0})
 
+        // tl2.from(".vertical-text", .5, {y: '-10%', opacity: 0})
         tl2.from(".box", 1, {opacity: 0, scale: 0})
         tl2.to(".box", 1, {left: '-62%', bottom: '-7%', scale: 4})
 
         const scene = new ScrollMagic.Scene({
             triggerElement: '.about-me-wrapper',
             triggerHook: "onLeave",
-            duration: "50%"
+            duration: "70%"
         })
         .setPin(".about-me-wrapper")
         .setTween(tl)
@@ -71,6 +74,16 @@ export default {
     padding: 24px 0;
     padding-bottom: 5rem;
     position: relative;
+
+    .vertical-text {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%) rotate(-90deg);
+        font-family: $ff2;
+        font-size: 10rem;
+        opacity: .04;
+    }
 
     .box {
         position: absolute;
