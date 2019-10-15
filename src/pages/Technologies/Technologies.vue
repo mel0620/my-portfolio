@@ -1,7 +1,7 @@
 <template>
     <section class="technologies">
         <div class="container">
-            <div class="section-title" data-text="section-text-header" :style="`--text-bg: 'MY SKILLS'`">{{ section_text }}</div>
+            <div class="section-title" data-scroll data-text="section-text-header" :style="`--text-bg: 'MY SKILLS'`">{{ section_text }}</div>
 
             <div class="gallery-type-wrapper">
                 <div class="gallery-type">
