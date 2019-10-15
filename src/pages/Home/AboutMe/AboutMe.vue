@@ -11,19 +11,14 @@
                 <div class="paragraph">
                     <p class="paragraph__item">Hi, I am Rommel Cuneta! I'm a Web Designer and a Frontend Developer focused on modern and latest trend design with a skill in web animation. I'm a graduate of Bachelor of Science in Information Technology. Passionate in design, coding and music.</p>
                 </div>
-                <!-- <div class="paragraph">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, eius dolorum? Dolorem, dignissimos deserunt. Et quam quas magnam, at cupiditate saepe dicta, atque minima tempore inventore dolore ut quaerat corporis.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet alias ipsam ullam illum architecto sit culpa quia. Consequatur, aliquam illo.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero quae totam accusamus deserunt tenetur soluta, ipsam, esse, repudiandae temporibus beatae harum exercitationem? Magnam a facilis quibusdam molestiae recusandae dolorum sapiente.</p>
-                </div> -->
             </div>
         </div>
     </section>
 </template>
 
 <script>
-import ScrollOut from "scroll-out";
 import {TweenMax, Power2, TimelineMax} from "gsap/TweenMax";
+import lax from 'lax.js'
 export default {
     data () {
         return {
@@ -31,9 +26,21 @@ export default {
             portrait: 'statics/me.png'
         }
     },
-    mounted () {
-        // ScrollOut();
+    methods: {
+        myParallax2() {
+            window.onload = function() {
+                lax.setup() // init
 
+                const updateLax = () => {
+                    lax.update(window.scrollY)
+                    window.requestAnimationFrame(updateLax)
+                }
+
+                window.requestAnimationFrame(updateLax)
+            }
+        }
+    },
+    mounted () {
         var tl = new TimelineMax({onUpdate:updatePercentage});
         var tl2 = new TimelineMax();
         const controller = new ScrollMagic.Controller();
@@ -65,6 +72,8 @@ export default {
         function updatePercentage() {
             tl.progress();
         }
+
+        this.myParallax2();
     }
 }
 </script>
@@ -74,6 +83,7 @@ export default {
     padding: 24px 0;
     padding-bottom: 5rem;
     position: relative;
+    background-color: #1c1c1c;
 
     .vertical-text {
         position: absolute;
@@ -85,12 +95,16 @@ export default {
         opacity: .04;
     }
 
+    .section-title {
+        color: #fff;
+    }
+
     .box {
         position: absolute;
         width: 100px;
         height: 100px;
         margin: auto;
-        border: 3px solid #555555;
+        border: 3px solid #fff;
         top: 0; right: 0; bottom: 0; left: 0;
         z-index: 0;
 
@@ -110,7 +124,7 @@ export default {
         .portrait {
             width: 400px;
             height: 400px;
-            background-color: #eeeeee;
+            background-color: #fff;
             position: relative;
             background-size: 350px;
             background-position: 20px 20px;
@@ -129,6 +143,7 @@ export default {
                 font-weight: 400;
                 padding: 1rem;
                 position: relative;
+                color: white;
             }
         }
 

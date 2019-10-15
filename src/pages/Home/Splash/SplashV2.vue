@@ -1,7 +1,9 @@
 <template>
     <q-page class="splash-v2">
         <div class="container">
-            <div class="hero-v2">
+            <div class="hero-v2 lax" data-lax-opacity="200 1, 100 1, 0 0" data-lax-anchor="self">
+                <div class="my-box"></div>
+                <div class="my-box-border"></div>
                 <div class="name-wrapper">
                     <div class="name">Rommel Cuneta</div>
                     <div class="name-overlay"></div>
@@ -17,10 +19,25 @@
 
 <script>
 import {TweenMax, Power2, TimelineLite} from "gsap/TweenMax";
+import lax from 'lax.js'
 export default {
     data (){
         return {
             
+        }
+    },
+    methods: {
+        myParallax() {
+            window.onload = function() {
+                lax.setup() // init
+
+                const updateLax = () => {
+                    lax.update(window.scrollY)
+                    window.requestAnimationFrame(updateLax)
+                }
+
+                window.requestAnimationFrame(updateLax)
+            }
         }
     },
     mounted () {
@@ -32,6 +49,11 @@ export default {
                 .to(".title-overlay", .6, {width: '100%'}, "=-.6")
                 .to(".title-overlay", .6, {left: 0, width: 0, ease: Circ.easeOut})
                 .fromTo(".titles", .3, {opacity: 0}, {opacity: 1})
+                .to(".my-box", .6, {opacity: 1, ease: Bounce.easeOut})
+                .to(".my-box-border", .6, {opacity: 1})
+                .to(".my-box-border", .3, {x: 20, y: 20, ease: Back.easeOut.config(2)});
+
+        this.myParallax();
     }
 }
 </script>
@@ -61,14 +83,42 @@ export default {
         text-align: center;
         position: relative;
         z-index: 5;
+        background-color: transparent;
+        width: max-content;
+        margin: auto;
+        padding: 1rem 2rem;
+        z-index: 1;
+
+        .my-box {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+            opacity: 0;
+            z-index: 2;
+        }
+
+        .my-box-border {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 0 0 8px #eaeaea;
+            opacity: 0;
+            z-index: 1;
+        }
 
         .name-wrapper {
             position: relative;
             width: max-content;
             margin: 0 auto;
+            z-index: 5;
 
             .name {
-                font-size: 8rem;
+                font-size: 6rem;
                 font-family: $ff1;
                 text-transform: uppercase;
                 font-weight: 500;
@@ -92,6 +142,7 @@ export default {
             position: relative;
             width: max-content;
             margin: -1rem auto 0;
+            z-index: 5;
 
             .titles {
                 font-family: $ff1;
@@ -111,12 +162,10 @@ export default {
         }
 
         @media screen and (max-width: 800px){
-            .name-wrapper {
-                .name {
-                    font-size: 6rem;
-                }
+            .my-box, .my-box-border {
+                opacity: 0 !important;
             }
-            
+
             .titles-wrapper {
                 .titles {
                     margin-top: 1rem;
