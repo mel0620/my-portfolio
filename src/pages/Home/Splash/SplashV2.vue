@@ -1,17 +1,17 @@
 <template>
     <q-page class="splash-v2">
         <div class="container">
-            <div ref="hero" class="hero-v2">
-                <div ref="slide" class="slide-overlay"></div>
-                <div ref="name" class="name">Rommel Cuneta</div>
-                <div ref="underline" class="underline"></div>
-                <div ref="title" class="titles">Web Designer and Frontend Developer</div>
+            <div class="hero-v2">
+                <div class="name-wrapper">
+                    <div ref="name" class="name">Rommel Cuneta</div>
+                    <div class="name-overlay"></div>
+                </div>
+                <div class="titles-wrapper">
+                    <div class="titles">Web Designer and Frontend Developer</div>
+                    <div class="title-overlay"></div>
+                </div>
             </div>
-            <!-- <div class="row justify-center">
-                <q-btn flat round icon="mdi-replay"></q-btn>
-            </div> -->
         </div>
-        <!-- <img width="500" class="me" src="statics/me.png" alt=""> -->
     </q-page>
 </template>
 
@@ -24,18 +24,15 @@ export default {
         }
     },
     mounted () {
-
-        const { slide }     = this.$refs;
         const { name }      = this.$refs;
-        const { underline } = this.$refs;
-        const { title }     = this.$refs;
         const timeline 		= new TimelineLite()
 
-        timeline.to(slide, .6, {width: '100%'})
-                .to(slide, .6, {width: 0, right: 0, ease: Circ.easeOut})
-                .to(underline, .6, {width: '100%', opacity: .12})
-                .fromTo(name, .6, {y: 10, opacity: 0}, {y: 0, opacity: 1})
-                .fromTo(title, .3, {y: -10, opacity: 0}, {y: 0, opacity: 1}, "=-.3")
+        timeline.to(".name-overlay", .6, {width: '100%'})
+                .to(".name-overlay", .6, {width: 0, right: 0, ease: Circ.easeOut})
+                .fromTo(name, .2, {opacity: 0}, {opacity: 1})
+                .to(".title-overlay", .6, {width: '100%'}, "=-.2")
+                .to(".title-overlay", .6, {left: 0, width: 0, ease: Circ.easeOut})
+                .fromTo(".titles", .3, {opacity: 0}, {opacity: 1})
     }
 }
 </script>
@@ -66,54 +63,72 @@ export default {
         position: relative;
         z-index: 5;
 
-        .slide-overlay {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            // right: 0;
-            // left: 0;
-            background-color: #1c1c1c;
-            z-index: 5;
+        .name-wrapper {
+            position: relative;
+            width: max-content;
+            margin: 0 auto;
+
+            .name {
+                font-size: 8rem;
+                font-family: $ff1;
+                text-transform: uppercase;
+                font-weight: 500;
+                color: #1a1a1a;
+                letter-spacing: 4px;
+                white-space: nowrap;
+                position: relative;
+                z-index: 1;
+            }
+
+            .name-overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                background-color: #1c1c1c;
+                z-index: 5;
+            }
         }
 
-        .name {
-            font-size: 8rem;
-            font-family: $ff1;
-            text-transform: uppercase;
-            font-weight: 500;
-            color: #1a1a1a;
-            letter-spacing: 4px;
-            white-space: nowrap;
+        .titles-wrapper {
+            position: relative;
+            width: max-content;
+            margin: 0 auto;
+
+            .titles {
+                font-family: $ff1;
+                letter-spacing: 4px;
+                font-size: 1.5rem;
+                color: #505050;
+            }
+
+            .title-overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                background-color: #1c1c1c;
+                z-index: 5;
+            }
         }
         
         .underline {
-            position: absolute;
-            top: 80%;
-            left: 50%;
-            transform: translate(-50%, -80%);
+            // position: absolute;
+            // top: 80%;
+            // left: 50%;
+            // transform: translate(-50%, -80%);
+            margin: auto;
+            text-align: center;
             height: 1px;
             background-color: #1c1c1c;
+            opacity: 0;
             // width: 100%;
-            margin-bottom: 10px;
-        }
-
-        .titles {
-            font-family: $ff1;
-            letter-spacing: 4px;
-            font-size: 1.5rem;
-            color: #505050;
+            // margin-bottom: 10px;
         }
 
         @media screen and (max-width: 800px){
             .name {
                 font-size: 6rem;
-                line-height: 6rem;
-            }
-
-            .underline {
-                top: 75%;
-                left: 50%;
-                transform: translate(-50%, -75%);
+                // line-height: 6rem;
             }
 
             .titles {
@@ -125,13 +140,7 @@ export default {
         @media screen and (max-width: 500px){
             .name {
                 font-size: 3rem;
-                line-height: 3rem;
-            }
-            .underline {
-                margin-top: 10px;
-                top: 55%;
-                left: 50%;
-                transform: translate(-50%, -55%);
+                // line-height: 3rem;
             }
             .titles {
                 margin-top: 1rem;
@@ -142,13 +151,7 @@ export default {
         @media screen and (max-width: 321px){
             .name {
                 font-size: 2rem;
-                line-height: 2rem;
-            }
-            .underline {
-                margin-top: 10px;
-                top: 45%;
-                left: 50%;
-                transform: translate(-50%, -45%);
+                // line-height: 2rem;
             }
             .titles {
                 margin-top: 0.875rem;
