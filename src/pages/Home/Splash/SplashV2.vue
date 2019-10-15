@@ -163,6 +163,7 @@ export default {
 
         @media screen and (max-width: 800px){
             .my-box, .my-box-border {
+                display: none !important;
                 opacity: 0 !important;
             }
 
