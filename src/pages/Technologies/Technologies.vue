@@ -96,7 +96,7 @@ export default {
                 {
                     name: 'Javascript',
                     logo: '../../statics/tech/javascript.svg',
-                    color: '#f5df36',
+                    color: '#e2c934',
                     knob: 60
                 },
                 {

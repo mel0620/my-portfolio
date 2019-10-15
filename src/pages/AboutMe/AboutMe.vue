@@ -8,10 +8,13 @@
                     <!-- <img class="img-fluid" src="statics/me.png" alt="Rommel Cuneta's Photo"> -->
                 </div>
                 <div class="paragraph">
+                    <p class="paragraph__item">Hi, I am Rommel Cuneta, a Web Designer and a Frontend Developer. I'm a graduate of Bachelor of Science in Information Technology. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, optio!</p>
+                </div>
+                <!-- <div class="paragraph">
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, eius dolorum? Dolorem, dignissimos deserunt. Et quam quas magnam, at cupiditate saepe dicta, atque minima tempore inventore dolore ut quaerat corporis.</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet alias ipsam ullam illum architecto sit culpa quia. Consequatur, aliquam illo.</p>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero quae totam accusamus deserunt tenetur soluta, ipsam, esse, repudiandae temporibus beatae harum exercitationem? Magnam a facilis quibusdam molestiae recusandae dolorum sapiente.</p>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -110,6 +113,8 @@ export default {
                 font-family: $ff4;
                 letter-spacing: 1px;
                 font-weight: 400;
+                padding: 1rem;
+                position: relative;
             }
         }
 

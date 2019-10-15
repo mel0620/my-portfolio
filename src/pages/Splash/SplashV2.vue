@@ -5,7 +5,7 @@
                 <div ref="slide" class="slide-overlay"></div>
                 <div ref="name" class="name">Rommel Cuneta</div>
                 <div ref="underline" class="underline"></div>
-                <div ref="title" class="titles">Web Designer | Frontend Developer</div>
+                <div ref="title" class="titles">Web Designer and Frontend Developer</div>
             </div>
             <!-- <div class="row justify-center">
                 <q-btn flat round icon="mdi-replay"></q-btn>
@@ -31,7 +31,7 @@ export default {
         const { title }     = this.$refs;
         const timeline 		= new TimelineLite()
 
-        timeline.to(slide, .8, {width: '100%'})
+        timeline.to(slide, .8, {width: '100%', ease: Back.easeOut.config(1.7)})
                 .to(slide, .6, {width: 0, right: 0, ease: Circ.easeOut})
                 .to(underline, .6, {width: '100%', opacity: .12})
                 .fromTo(name, .6, {y: 10, opacity: 0}, {y: 0, opacity: 1})
@@ -80,7 +80,7 @@ export default {
             font-size: 8rem;
             font-family: $ff1;
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 500;
             color: #1a1a1a;
             letter-spacing: 4px;
             white-space: nowrap;
