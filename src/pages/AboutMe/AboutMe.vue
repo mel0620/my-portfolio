@@ -107,6 +107,7 @@ export default {
 
         .paragraph {
             p {
+                font-family: $ff4;
                 letter-spacing: 1px;
                 font-weight: 400;
             }

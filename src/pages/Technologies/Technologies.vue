@@ -193,6 +193,7 @@ export default {
                 min-height: 150px;
                 overflow: hidden;
                 transition: .3s all ease-in-out;
+                font-family: $ff4;
 
                 &::before {
                     content: ' ';
