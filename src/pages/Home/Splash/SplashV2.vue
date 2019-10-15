@@ -29,7 +29,7 @@ export default {
         timeline.to(".name-overlay", .6, {width: '100%'})
                 .to(".name-overlay", .6, {width: 0, right: 0, ease: Circ.easeOut})
                 .fromTo(".name", .2, {opacity: 0}, {opacity: 1})
-                .to(".title-overlay", .6, {width: '100%'}, "=-.2")
+                .to(".title-overlay", .6, {width: '100%'}, "=-.6")
                 .to(".title-overlay", .6, {left: 0, width: 0, ease: Circ.easeOut})
                 .fromTo(".titles", .3, {opacity: 0}, {opacity: 1})
     }
