@@ -2,8 +2,6 @@
     <q-page class="splash-v2">
         <div class="container">
             <div class="hero-v2 lax" data-lax-opacity="200 1, 100 1, 0 0" data-lax-anchor="self">
-                <div class="my-box"></div>
-                <div class="my-box-border"></div>
                 <div class="name-wrapper">
                     <div class="name">Rommel Cuneta</div>
                     <div class="name-overlay"></div>
@@ -48,10 +46,7 @@ export default {
                 .fromTo(".name", .2, {opacity: 0}, {opacity: 1})
                 .to(".title-overlay", .6, {width: '100%'}, "=-.6")
                 .to(".title-overlay", .6, {left: 0, width: 0, ease: Circ.easeOut})
-                .fromTo(".titles", .3, {opacity: 0}, {opacity: 1})
-                .to(".my-box", .6, {opacity: 1, ease: Bounce.easeOut})
-                .to(".my-box-border", .6, {opacity: 1})
-                .to(".my-box-border", .3, {x: 20, y: 20, ease: Back.easeOut.config(2)});
+                .fromTo(".titles", .3, {opacity: 0}, {opacity: 1});
 
         this.myParallax();
     }
