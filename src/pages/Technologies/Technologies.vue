@@ -16,7 +16,7 @@
                                 :thickness="0.22"
                                 :style="`color: ${item.color} !important;`"
                                 track-color="grey-3"
-                            />
+                            >{{item.knob}}%</q-knob>
                         </div>
                     </div>
                 </div>
