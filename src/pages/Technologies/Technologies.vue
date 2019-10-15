@@ -16,7 +16,6 @@
                                 :thickness="0.22"
                                 :style="`color: ${item.color} !important;`"
                                 track-color="grey-3"
-                                class="q-ma-md"
                             />
                         </div>
                     </div>
@@ -122,7 +121,7 @@ export default {
                     name: 'Illustrator',
                     logo: '../../statics/tech/illustrator.svg',
                     color: '#fb7e2a',
-                    knob: 70
+                    knob: 65
                 },
                 {
                     name: 'XD',
