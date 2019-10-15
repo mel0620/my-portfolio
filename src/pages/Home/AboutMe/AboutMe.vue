@@ -124,6 +124,7 @@ export default {
         .paragraph {
             p {
                 font-family: $ff4;
+                font-size: 1.5rem;
                 letter-spacing: 1px;
                 font-weight: 400;
                 padding: 1rem;
@@ -138,6 +139,12 @@ export default {
                 width: 300px;
                 height: 300px;
                 background-size: 250px;
+            }
+
+            .paragraph {
+                p {
+                    font-size: 1rem;
+                }
             }
         }
 
