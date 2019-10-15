@@ -36,7 +36,7 @@
             <q-item-label>Home</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item clickable tag="a" target="_blank" href="javascript:">
+        <q-item clickable tag="a" href="javascript:">
           <q-item-section avatar>
             <q-icon name="school" />
           </q-item-section>
@@ -45,7 +45,7 @@
             <!-- <q-item-label caption>quasar.dev</q-item-label> -->
           </q-item-section>
         </q-item>
-        <q-item clickable @click="$router.push('/design-gallery')">
+        <!-- <q-item clickable @click="$router.push('/design-gallery')">
           <q-item-section avatar>
             <q-icon name="mdi-image-multiple" />
           </q-item-section>
@@ -53,7 +53,7 @@
             <q-item-label>Design Gallery</q-item-label>
             <q-item-label caption></q-item-label>
           </q-item-section>
-        </q-item>
+        </q-item> -->
         <q-separator></q-separator>
         <q-item-label header>Social Links</q-item-label>
         <q-item clickable tag="a" target="_blank" href="https://www.facebook.com/rommel.cuneta">

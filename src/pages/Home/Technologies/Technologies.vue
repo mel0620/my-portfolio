@@ -38,19 +38,19 @@ export default {
                     name: 'HTML5',
                     logo: '../../statics/tech/html.svg',
                     color: '#e04a2f',
-                    knob: 90
+                    knob: 85
                 },
                 {
                     name: 'CSS3',
                     logo: '../../statics/tech/css.svg',
                     color: '#324ce1',
-                    knob: 90
+                    knob: 80
                 },
                 {
                     name: 'Sass',
                     logo: '../../statics/tech/sass.svg',
                     color: '#cc629a',
-                    knob: 80
+                    knob: 75
                 },
                 {
                     name: 'Stylus',
@@ -62,7 +62,7 @@ export default {
                     name: 'Bootstrap',
                     logo: '../../statics/tech/bootstrap.svg',
                     color: '#563c7b',
-                    knob: 95
+                    knob: 90
                 },
                 {
                     name: 'Laravel',
