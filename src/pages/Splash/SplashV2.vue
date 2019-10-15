@@ -3,7 +3,7 @@
         <div class="container">
             <div ref="hero" class="hero-v2">
                 <div ref="slide" class="slide-overlay"></div>
-                <div ref="name" class="name">ROMMEL CUNETA</div>
+                <div ref="name" class="name">Rommel Cuneta</div>
                 <div ref="underline" class="underline"></div>
                 <div ref="title" class="titles">Web Designer | Frontend Developer</div>
             </div>
@@ -76,6 +76,7 @@ export default {
         .name {
             font-size: 8rem;
             font-family: $ff1;
+            text-transform: uppercase;
             font-weight: 600;
             color: #1a1a1a;
             letter-spacing: 4px;

@@ -65,7 +65,8 @@ module.exports = function (ctx) {
         'QImg',
         'QSpinnerIos',
         'QPageSticky',
-        'QAvatar'
+        'QAvatar',
+        'QKnob'
       ],
 
       directives: [

@@ -5,8 +5,20 @@
 
             <div class="gallery-type-wrapper">
                 <div class="gallery-type">
-                    <div class="gallery-type__item" v-for="(item, i) in techs" :key="i" :style="`--bg-image: url(${ item.logo })`">
-                        <div class="gallery-type__item-name" :style="`--bg-name-color: ${ item.color }`">{{ item.name }}</div>
+                    <div class="gallery-type__item" v-for="(item, i) in techs" :key="i" :style="`--bg-image: url(${ item.logo }); --bg-name-color: ${ item.color }`">
+                        <div class="gallery-type__item-name">{{ item.name }}</div>
+                        <div class="gallery-type__item-knob">
+                            <q-knob
+                                readonly
+                                v-model="item.knob"
+                                show-value
+                                size="50px"
+                                :thickness="0.22"
+                                :style="`color: ${item.color} !important;`"
+                                track-color="grey-3"
+                                class="q-ma-md"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -25,82 +37,98 @@ export default {
                 {
                     name: 'HTML5',
                     logo: '../../statics/tech/html.svg',
-                    color: '#e04a2f'
+                    color: '#e04a2f',
+                    knob: 90
                 },
                 {
                     name: 'CSS3',
                     logo: '../../statics/tech/css.svg',
-                    color: '#324ce1'
+                    color: '#324ce1',
+                    knob: 90
                 },
                 {
                     name: 'Sass',
                     logo: '../../statics/tech/sass.svg',
-                    color: '#cc629a'
+                    color: '#cc629a',
+                    knob: 80
                 },
                 {
                     name: 'Stylus',
                     logo: '../../statics/tech/stylus.svg',
-                    color: '#333333'
+                    color: '#333333',
+                    knob: 70
                 },
                 {
                     name: 'Bootstrap',
                     logo: '../../statics/tech/bootstrap.svg',
-                    color: '#563c7b'
+                    color: '#563c7b',
+                    knob: 95
                 },
                 {
                     name: 'Laravel',
                     logo: '../../statics/tech/laravel.svg',
-                    color: '#ec5144'
+                    color: '#ec5144',
+                    knob: 50
                 },
                 {
                     name: 'Vue',
                     logo: '../../statics/tech/vue.svg',
-                    color: '#4ab984'
+                    color: '#4ab984',
+                    knob: 60
                 },
                 {
                     name: 'Quasar',
                     logo: '../../statics/tech/quasar.png',
-                    color: '#2b76d0'
+                    color: '#2b76d0',
+                    knob: 70
                 },
                 {
                     name: 'Vuetify',
                     logo: '../../statics/tech/vuetify.svg',
-                    color: '#3197f3'
+                    color: '#3197f3',
+                    knob: 60
                 },
                 {
                     name: 'jQuery',
                     logo: '../../statics/tech/jquery.svg',
-                    color: '#21609b'
+                    color: '#21609b',
+                    knob: 50
                 },
                 {
                     name: 'Javascript',
                     logo: '../../statics/tech/javascript.svg',
-                    color: '#f5df36'
+                    color: '#f5df36',
+                    knob: 60
                 },
                 {
                     name: 'Github',
                     logo: '../../statics/tech/github.svg',
-                    color: '#000000'
+                    color: '#000000',
+                    knob: 90
                 },
                 {
                     name: 'Git',
                     logo: '../../statics/tech/git-icon.svg',
-                    color: '#da493b'
+                    color: '#da493b',
+                    knob: 85
                 },
                 {
                     name: 'Photoshop',
                     logo: '../../statics/tech/photoshop.svg',
-                    color: '#0359e8'
+                    color: '#0359e8',
+                    knob: 70
                 },
                 {
                     name: 'Illustrator',
                     logo: '../../statics/tech/illustrator.svg',
-                    color: '#fb7e2a'
+                    color: '#fb7e2a',
+                    knob: 70
                 },
                 {
                     name: 'XD',
                     logo: '../../statics/tech/xd.svg',
-                    color: '#fb1bbd'
+                    color: '#fb1bbd',
+                    knob: 60
                 },
             ]
         }
@@ -183,7 +211,7 @@ export default {
 
                 &::after {
                     content: ' ';
-                    // background-color: rgba(#000, .05);
+                    background-color: #fff;
                     position: absolute;
                     top: 0;
                     right: 0;
@@ -209,6 +237,15 @@ export default {
                     z-index: 5;
                 }
 
+                &-knob {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) scale(0);
+                    z-index: 9;
+                    transition: .3s all ease-in-out;
+                }
+
                 &:hover {
                     background-color: #fff;
                     box-shadow: 0 3px 20px 5px rgba(#000, .08);
@@ -218,12 +255,16 @@ export default {
                     }
 
                     &::after {
-                        opacity: 1;
+                        opacity: .8;
                         transform: translateY(0px);
                     }
 
                     .gallery-type__item-name {
                         transform: translateY(0);
+                    }
+
+                    .gallery-type__item-knob {
+                        transform: translate(-50%, -50%) scale(1)
                     }
                 }
             }
