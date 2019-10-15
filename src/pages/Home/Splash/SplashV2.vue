@@ -70,7 +70,7 @@ export default {
             .name {
                 font-size: 8rem;
                 font-family: $ff1;
-                text-transform: uppercase;
+                // text-transform: uppercase;
                 font-weight: 500;
                 color: #1a1a1a;
                 letter-spacing: 4px;

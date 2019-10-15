@@ -143,7 +143,7 @@ export default {
         tl.from(".section-title--about", .5, {y: 50, opacity: 0});
         tl.from(".bottom-line--about", .6, {opacity: 0, color: '#1c1c1c', width: 0});
 
-        tl2.staggerFrom(".gallery-type__item", .3, {opacity: 0, y: -10}, 0.2)
+        tl2.staggerFrom(".gallery-type__item", .2, {opacity: 0, y: -10, delay: 1}, 0.1)
 
         const scene = new ScrollMagic.Scene({
             triggerElement: '.technologies',
