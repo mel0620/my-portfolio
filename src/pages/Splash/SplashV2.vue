@@ -7,6 +7,9 @@
                 <div ref="underline" class="underline"></div>
                 <div ref="title" class="titles">Web Designer | Frontend Developer</div>
             </div>
+            <!-- <div class="row justify-center">
+                <q-btn flat round icon="mdi-replay"></q-btn>
+            </div> -->
         </div>
         <!-- <img width="500" class="me" src="statics/me.png" alt=""> -->
     </q-page>
@@ -24,7 +27,7 @@ export default {
 
         const { slide }     = this.$refs;
         const { name }      = this.$refs;
-        const { underline }      = this.$refs;
+        const { underline } = this.$refs;
         const { title }     = this.$refs;
         const timeline 		= new TimelineLite()
 

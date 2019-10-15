@@ -141,7 +141,7 @@ export default {
 
         // tl.from(".section-title", .5, {y: 50, opacity: 0});
 
-        tl2.staggerFrom(".gallery-type__item", .3, {opacity: 0}, 0.1)
+        tl2.staggerFrom(".gallery-type__item", .3, {opacity: 0, y: -10}, 0.1)
 
         const scene = new ScrollMagic.Scene({
             triggerElement: '.technologies',
