@@ -79,9 +79,9 @@ export default {
         position: relative;
         z-index: 5;
         background-color: transparent;
-        width: max-content;
-        margin: auto;
-        padding: 1rem 2rem;
+        //width: max-content;
+        //margin: auto;
+        //padding: 1rem 2rem;
         z-index: 1;
 
         .my-box {
