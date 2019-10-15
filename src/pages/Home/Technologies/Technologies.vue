@@ -137,13 +137,12 @@ export default {
         // ScrollOut();
 
         var tl = new TimelineMax({onUpdate:updatePercentage});
-        var tl2 = new TimelineMax();
+        // var tl2 = new TimelineMax();
         const controller = new ScrollMagic.Controller();
 
         tl.from(".section-title--about", .5, {y: 50, opacity: 0});
         tl.from(".bottom-line--about", .6, {opacity: 0, color: '#1c1c1c', width: 0});
-
-        tl2.staggerFrom(".gallery-type__item", .3, {opacity: 0, y: -10}, 0.2)
+        tl.staggerFrom(".gallery-type__item", .3, {opacity: 0, y: -10}, 0.2)
 
         const scene = new ScrollMagic.Scene({
             triggerElement: '.technologies',
@@ -154,11 +153,11 @@ export default {
         .setTween(tl)
         .addTo(controller);
 
-        const scene2 = new ScrollMagic.Scene({
-            triggerElement: '.gallery-type-wrapper'
-        })
-        .setTween(tl2)
-        .addTo(controller)
+        // const scene2 = new ScrollMagic.Scene({
+        //     triggerElement: '.gallery-type-wrapper'
+        // })
+        // .setTween(tl2)
+        // .addTo(controller)
 
         function updatePercentage() {
             tl.progress();
