@@ -18,8 +18,10 @@
 </template>
 
 <script>
-import {TweenMax, Power2, TimelineLite} from "gsap/TweenMax";
+import {TweenMax, Power2, TimelineLite} from "gsap/TweenMax"
 import lax from 'lax.js'
+import Rellax from "rellax"
+
 export default {
     data (){
         return {
@@ -38,6 +40,8 @@ export default {
 
                 window.requestAnimationFrame(updateLax)
             }
+
+            var rellax = new Rellax('.splash-v2');
         }
     },
     mounted () {
