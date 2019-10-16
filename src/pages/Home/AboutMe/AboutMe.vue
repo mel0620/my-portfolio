@@ -10,7 +10,7 @@
                 </div>
                 <div class="paragraph">
                     <p class="paragraph__item">Hi, I am Rommel Cuneta! I'm a Web Designer and a Frontend Developer focused on modern and latest trend design with a skill in web animation. I'm a graduate of Bachelor of Science in Information Technology. Passionate in design, coding and music.</p>
-                    <q-btn class="text-capitalize" color="orange" outline label="Download CV" icon="mdi-file-download-outline"></q-btn>
+                    <q-btn class="text-capitalize" color="orange" outline label="Download CV"></q-btn>
                 </div>
             </div>
         </div>
