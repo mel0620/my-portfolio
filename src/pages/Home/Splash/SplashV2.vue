@@ -1,8 +1,9 @@
 <template>
     <q-page class="splash-v2 rellax" data-rellax-speed="-7">
-        <div class="splash-overlay"></div>
+        <!-- <div class="splash-overlay"></div> -->
         <div class="container">
-            <div class="hero-v2 lax" data-lax-opacity="200 1, 100 1, 0 0" data-lax-anchor="self">
+            <!-- <div class="hero-v2 lax" data-lax-opacity="200 1, 100 1, 0 0" data-lax-anchor="self"> -->
+            <div class="hero-v2">
                 <div class="my-box"></div>
                 <div class="my-box-border"></div>
                 <div class="name-wrapper">
@@ -54,7 +55,7 @@ export default {
                 .to(".title-overlay", .6, {width: '100%'}, "=-.6")
                 .to(".title-overlay", .6, {left: 0, width: 0, ease: Circ.easeOut})
                 .fromTo(".titles", .3, {opacity: 0}, {opacity: 1})
-                .to(".my-box", .6, {scale: 1, opacity: 1, ease: Back.easeOut.config(1.7)})
+                .to(".my-box", .6, {scale: 1, opacity: .9, ease: Back.easeOut.config(1.7)})
                 .to(".my-box-border", .6, {opacity: 1})
                 .to(".my-box-border", .3, {x: 20, y: 20, ease: Back.easeOut.config(2)});
 
@@ -66,8 +67,8 @@ export default {
 <style lang="scss">
 .splash-v2 {
     // background: var(--splash-bg-light);
-    // background: linear-gradient(rgba(#fff, .9), rgba(#fff, .9)), url('../../../statics/splash-bg.jpg');
-    background-image: url('../../../statics/splash-bg.jpg');
+    background: linear-gradient(rgba(#fff, .7), rgba(#fff, .9)), url('../../../statics/splash-bg.jpg');
+    // background-image: url('../../../statics/splash-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -76,15 +77,15 @@ export default {
     position: relative;
     overflow: hidden;
 
-    .splash-overlay {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: rgba(#fff, .7);
-        z-index: 1;
-    }
+    // .splash-overlay {
+    //     position: absolute;
+    //     top: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     left: 0;
+    //     background-color: rgba(#fff, .7);
+    //     z-index: 1;
+    // }
     
     .me {
         position: absolute;
