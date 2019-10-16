@@ -64,7 +64,11 @@ export default {
 
 <style lang="scss">
 .splash-v2 {
-    background: var(--splash-bg-light);
+    // background: var(--splash-bg-light);
+    background: linear-gradient(rgba(#fff, .9), rgba(#fff, .9)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     position: relative;
@@ -110,7 +114,7 @@ export default {
             right: 0;
             bottom: 0;
             left: 0;
-            box-shadow: 0 0 0 8px #eaeaea;
+            box-shadow: 0 0 0 8px #8a8a8a;
             opacity: 0;
             z-index: 1;
         }
