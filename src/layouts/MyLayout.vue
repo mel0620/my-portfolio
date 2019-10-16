@@ -26,7 +26,7 @@
     </q-header>
 
     <q-drawer overlay v-model="leftDrawerOpen" content-class="bg-grey-2" side="right">
-      <q-list>
+      <q-list class="montserrat">
         <q-item-label header>Navigation</q-item-label>
         <q-item clickable @click="$router.push('/')">
           <q-item-section avatar>
