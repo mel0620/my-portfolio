@@ -1,5 +1,6 @@
 <template>
     <q-page class="splash-v2 rellax" data-rellax-speed="-7">
+        <div class="splash-overlay"></div>
         <div class="container">
             <div class="hero-v2 lax" data-lax-opacity="200 1, 100 1, 0 0" data-lax-anchor="self">
                 <div class="my-box"></div>
@@ -65,7 +66,8 @@ export default {
 <style lang="scss">
 .splash-v2 {
     // background: var(--splash-bg-light);
-    background: linear-gradient(rgba(#fff, .9), rgba(#fff, .9)), url('../../../statics/splash-bg.jpg');
+    // background: linear-gradient(rgba(#fff, .9), rgba(#fff, .9)), url('../../../statics/splash-bg.jpg');
+    background-image: url('../../../statics/splash-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -73,6 +75,16 @@ export default {
     align-items: center;
     position: relative;
     overflow: hidden;
+
+    .splash-overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(#fff, .7);
+        z-index: 1;
+    }
     
     .me {
         position: absolute;
