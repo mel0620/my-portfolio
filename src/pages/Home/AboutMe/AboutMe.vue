@@ -157,9 +157,11 @@ export default {
                 width: 300px;
                 height: 300px;
                 background-size: 250px;
+                clip-path: none;
             }
 
             .paragraph {
+                text-align: center;
                 p {
                     font-size: 1rem;
                 }

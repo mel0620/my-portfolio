@@ -49,9 +49,9 @@ html {
     height: auto;
 }
 
-// [data-scroll] {
-//     transition: all 1s;
-// }
+[data-scroll] {
+    transition: all .3s;
+}
 
 // [data-scroll="in"] {
 //     opacity: 1;

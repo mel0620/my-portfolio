@@ -1,6 +1,6 @@
 <template>
     <q-page class="splash-v2 rellax" data-rellax-speed="-7">
-        <!-- <div class="splash-overlay"></div> -->
+        <div class="splash-overlay"></div>
         <div class="container">
             <!-- <div class="hero-v2 lax" data-lax-opacity="200 1, 100 1, 0 0" data-lax-anchor="self"> -->
             <div class="hero-v2">
@@ -67,8 +67,8 @@ export default {
 <style lang="scss">
 .splash-v2 {
     // background: var(--splash-bg-light);
-    background: linear-gradient(rgba(#fff, .5), rgba(#fff, .5)), url('../../../statics/splash-bg.jpg');
-    // background-image: url('../../../statics/splash-bg.jpg');
+    // background: linear-gradient(rgba(#fff, .5), rgba(#fff, .5)), url('../../../statics/splash-bg.jpg');
+    background-image: url('../../../statics/splash-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -77,15 +77,19 @@ export default {
     position: relative;
     overflow: hidden;
 
-    // .splash-overlay {
-    //     position: absolute;
-    //     top: 0;
-    //     right: 0;
-    //     bottom: 0;
-    //     left: 0;
-    //     background-color: rgba(#fff, .7);
-    //     z-index: 1;
-    // }
+    .splash-overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(#fff, .5);
+        z-index: 1;
+
+        @media screen and (max-width: 800px){ 
+            background-color: rgba(#fff, .9);
+        }
+    }
     
     .me {
         position: absolute;
@@ -137,6 +141,7 @@ export default {
             width: max-content;
             margin: 0 auto;
             z-index: 5;
+            text-align: center;
 
             .name {
                 font-size: 6rem;
@@ -145,7 +150,7 @@ export default {
                 font-weight: 700;
                 color: #1a1a1a;
                 letter-spacing: 4px;
-                white-space: nowrap;
+                // white-space: nowrap;
                 position: relative;
                 z-index: 1;
             }
@@ -184,6 +189,7 @@ export default {
 
         @media screen and (max-width: 800px){
             padding: 0;
+
             .my-box, .my-box-border {
                 opacity: 0 !important;
             }
@@ -197,17 +203,23 @@ export default {
         }
 
         @media screen and (max-width: 500px){
+            width: auto;
+
             .name-wrapper {
+                width: 100%;
+
                 .name {
-                    font-size: 3rem;
-                    // line-height: 3rem;
+                    font-size: 4rem;
+                    line-height: 4rem;
                 }
             }
             .titles-wrapper {
                 width: 100%;
+
                 .titles {
                     margin-top: 1rem;
-                    font-size: 1rem;
+                    font-size: 1.2rem;
+                    font-weight: 600;
                 }
             }
         }
@@ -216,7 +228,6 @@ export default {
             .name-wrapper {
                 .name {
                     font-size: 2rem;
-                    // line-height: 2rem;
                 }
             }
             .titles-wrapper {
