@@ -83,7 +83,9 @@ export default {
     padding: 24px 0;
     padding-bottom: 5rem;
     position: relative;
-    background-color: #1c1c1c;
+    // background-color: #1c1c1c;
+    background: #292929;
+    background: radial-gradient(circle, #292929 0%, #1c1c1c 53%, #1c1c1c 100%);
 
     .vertical-text {
         position: absolute;
