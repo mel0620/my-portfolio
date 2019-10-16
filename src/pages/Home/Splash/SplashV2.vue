@@ -49,7 +49,7 @@ export default {
                 .to(".title-overlay", .6, {width: '100%'}, "=-.6")
                 .to(".title-overlay", .6, {left: 0, width: 0, ease: Circ.easeOut})
                 .fromTo(".titles", .3, {opacity: 0}, {opacity: 1})
-                .to(".my-box", .6, {opacity: 1, ease: Bounce.easeOut})
+                .to(".my-box", .6, {scale: 1, opacity: 1, ease: Back.easeOut.config(1.7)})
                 .to(".my-box-border", .6, {opacity: 1})
                 .to(".my-box-border", .3, {x: 20, y: 20, ease: Back.easeOut.config(2)});
 
@@ -98,6 +98,7 @@ export default {
             background-color: #fff;
             opacity: 0;
             z-index: 2;
+            transform: scale(0);
         }
 
         .my-box-border {
@@ -162,6 +163,7 @@ export default {
         }
 
         @media screen and (max-width: 800px){
+            padding: 0;
             .my-box, .my-box-border {
                 opacity: 0 !important;
             }
