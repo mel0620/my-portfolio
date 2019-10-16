@@ -1,7 +1,6 @@
 // app global css in SCSS form
 @import url('https://fonts.googleapis.com/css?family=Anton|Oswald:300,400,500,600,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates:300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap');
 @import "./fluid-type.scss";
 
 html, body {
@@ -28,7 +27,7 @@ html {
     font-family: $ff2;
 }
 
-.montserrat {
+.sourcesans {
     font-family: $ff4;
 }
 
@@ -50,29 +49,28 @@ html {
     height: auto;
 }
 
-//SCROLLOUT
-[data-scroll] {
-    transition: all 1s;
-}
+// [data-scroll] {
+//     transition: all 1s;
+// }
 
-[data-scroll="in"] {
-    opacity: 1;
-    transform: translateY(0);
-}
+// [data-scroll="in"] {
+//     opacity: 1;
+//     transform: translateY(0);
+// }
 
-[data-scroll="out"] {
-    opacity: 0;
-    transform: translateY(20px);
-} //END SCROLLOUT
+// [data-scroll="out"] {
+//     opacity: 0;
+//     transform: translateY(20px);
+// }
 
 [data-text="section-text-header"] {
     position: relative;
     text-align: center;
     font-size: 2.5rem;
-    font-weight: 500;
+    font-weight: 600;
     // text-transform: uppercase;
     color: $text-dark;
-    font-family: $ff1;
+    font-family: $ff4;
     margin: 3rem 0;
     color: #1c1c1c;
     white-space: nowrap;

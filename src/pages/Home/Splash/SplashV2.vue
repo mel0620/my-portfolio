@@ -67,7 +67,7 @@ export default {
 <style lang="scss">
 .splash-v2 {
     // background: var(--splash-bg-light);
-    background: linear-gradient(rgba(#fff, .7), rgba(#fff, .9)), url('../../../statics/splash-bg.jpg');
+    background: linear-gradient(rgba(#fff, .5), rgba(#fff, .5)), url('../../../statics/splash-bg.jpg');
     // background-image: url('../../../statics/splash-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -140,9 +140,9 @@ export default {
 
             .name {
                 font-size: 6rem;
-                font-family: $ff1;
+                font-family: $ff4;
                 text-transform: uppercase;
-                font-weight: 500;
+                font-weight: 700;
                 color: #1a1a1a;
                 letter-spacing: 4px;
                 white-space: nowrap;
@@ -166,10 +166,10 @@ export default {
             z-index: 5;
 
             .titles {
-                font-family: $ff1;
+                font-family: $ff4;
                 letter-spacing: 4px;
                 font-size: 1.5rem;
-                color: #505050;
+                color: #303030;
             }
 
             .title-overlay {
