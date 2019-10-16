@@ -1,5 +1,5 @@
 <template>
-    <q-page class="splash-v2 rellax" data-rellax-speed="-7">
+    <q-page class="splash-v2 rellax" data-rellax-speed="-7" id="home">
         <div class="splash-overlay"></div>
         <div class="container">
             <!-- <div class="hero-v2 lax" data-lax-opacity="200 1, 100 1, 0 0" data-lax-anchor="self"> -->

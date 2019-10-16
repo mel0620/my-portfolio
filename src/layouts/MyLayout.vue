@@ -96,7 +96,7 @@
 			</div>
 			<div class="links-wrapper">
 				<div class="links">
-					<a class="links__item" href="javascript:" @click="$router.push('/')">Home</a>
+					<a class="links__item" href="#home" >Home</a>
 					<a class="links__item" href="#aboutme">About Me</a>
 					<a class="links__item" href="javascript:">Education and Experience</a>
 					<a class="links__item" href="#skills">My Skills</a>
@@ -154,9 +154,6 @@ export default {
 				tl.reverse();
 				// this.toggleTween(tl)
 			})
-		},
-		closeTween() {
-			tl.reverse();
 		},
 		toggleTween(tween) {
 			tween.reversed() ? tween.play() : tween.reverse();
