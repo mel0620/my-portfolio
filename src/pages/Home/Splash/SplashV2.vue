@@ -65,7 +65,7 @@ export default {
 <style lang="scss">
 .splash-v2 {
     // background: var(--splash-bg-light);
-    background: linear-gradient(rgba(#fff, .9), rgba(#fff, .9)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80');
+    background: linear-gradient(rgba(#fff, .9), rgba(#fff, .9)), url('../../../statics/splash-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
