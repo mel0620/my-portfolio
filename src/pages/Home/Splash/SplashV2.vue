@@ -1,5 +1,5 @@
 <template>
-    <q-page class="splash-v2">
+    <q-page class="splash-v2 rellax" data-rellax-speed="-7">
         <div class="container">
             <div class="hero-v2 lax" data-lax-opacity="200 1, 100 1, 0 0" data-lax-anchor="self">
                 <div class="my-box"></div>
@@ -65,7 +65,6 @@ export default {
 <style lang="scss">
 .splash-v2 {
     background: var(--splash-bg-light);
-    background-attachment: fixed;
     display: flex;
     align-items: center;
     position: relative;
