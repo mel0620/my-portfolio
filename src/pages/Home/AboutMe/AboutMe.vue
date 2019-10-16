@@ -1,8 +1,8 @@
 <template>
-    <section class="about-me-wrapper">
+    <section class="about-me-wrapper" id="aboutme">
         <!-- <div class="vertical-text">ABOUT ME</div> -->
         <div class="container">
-            <div class="section-title" data-text="section-text-header" :style="`--text-bg: ''`">{{ section_text }} <span class="bottom-line--tech" data-line="border-bottom"></span></div>
+            <div class="section-title" data-text="section-text-header" :style="`--text-bg: ''`">{{ section_text }} <span class="bottom-line--about" data-line="border-bottom"></span></div>
             <div class="about-me">
                 <div class="box"></div>
                 <div class="portrait" :style="`background-image: url(${portrait})`">
@@ -47,7 +47,7 @@ export default {
         const controller = new ScrollMagic.Controller();
 
         tl.from(".section-title", 1, {y: 50, opacity: 0});
-        tl.from(".bottom-line--tech", .6, {opacity: 0, color: '#1c1c1c', width: 0});
+        tl.from(".bottom-line--about", .6, {opacity: 0, color: '#1c1c1c', width: 0});
         tl.from(".portrait", 1, {x: 50, opacity: 0});
         tl.from(".paragraph", 1, {x: -50, opacity: 0})
 

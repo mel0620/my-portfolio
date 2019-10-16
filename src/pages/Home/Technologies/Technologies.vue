@@ -1,8 +1,8 @@
 <template>
-    <section class="technologies">
+    <section class="technologies" id="skills">
         <div class="container">
             <!-- <h1 class="sample">SKILLS</h1> -->
-            <div class="section-title--about" data-text="section-text-header" :style="`--text-bg: ''`">{{ section_text }} <span class="bottom-line--about" data-line="border-bottom"></span></div>
+            <div class="section-title--tech" data-text="section-text-header" :style="`--text-bg: ''`">{{ section_text }} <span class="bottom-line--tech" data-line="border-bottom"></span></div>
 
             <div class="gallery-type-wrapper">
                 <div class="gallery-type">
@@ -13,7 +13,7 @@
                                 readonly
                                 v-model="item.knob"
                                 show-value
-                                size="50px"
+                                size="45px"
                                 :thickness="0.22"
                                 :style="`color: ${item.color} !important;`"
                                 track-color="grey-3"
@@ -140,15 +140,15 @@ export default {
         var tl2 = new TimelineMax();
         const controller = new ScrollMagic.Controller();
 
-        tl.from(".section-title--about", .5, {y: 50, opacity: 0});
-        tl.from(".bottom-line--about", .6, {opacity: 0, color: '#1c1c1c', width: 0});
+        tl.from(".section-title--tech", .5, {y: 50, opacity: 0});
+        tl.from(".bottom-line--tech", .6, {opacity: 0, color: '#1c1c1c', width: 0});
 
         tl2.staggerFrom(".gallery-type__item", .2, {opacity: 0, y: -10, delay: 1}, 0.1)
 
         const scene = new ScrollMagic.Scene({
             triggerElement: '.technologies',
             triggerHook: "onLeave",
-            duration: "50%"
+            duration: "100%"
         })
         .setPin(".technologies")
         .setTween(tl)
@@ -181,7 +181,7 @@ export default {
         margin-top: 5rem;
         .gallery-type {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
             grid-gap: 3rem;
             position: relative;
 
@@ -194,7 +194,7 @@ export default {
                 // box-shadow: 0 3px 20px 5px rgba(#000, .08);
                 // border-radius: 5px;
                 position: relative;
-                min-height: 150px;
+                min-height: 125px;
                 overflow: hidden;
                 transition: .3s all ease-in-out;
                 font-family: $ff4;
@@ -207,7 +207,7 @@ export default {
                     right: 0;
                     left: 0;
                     background-image: var(--bg-image);
-                    background-size: 100px;
+                    background-size: 80px;
                     background-position: center;
                     background-repeat: no-repeat;
                     transition: .3s all ease-in-out;
@@ -279,7 +279,7 @@ export default {
 
                 &__item {
                     &::before {
-                        background-size: 70px;
+                        background-size: 60px;
                     }
                 }
             }

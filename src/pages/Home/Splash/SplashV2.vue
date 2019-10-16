@@ -47,17 +47,20 @@ export default {
         }
     },
     mounted () {
-        const timeline 		= new TimelineLite()
+        const timeline = new TimelineLite()
 
-        timeline.to(".name-overlay", .6, {width: '100%'})
-                .to(".name-overlay", .6, {width: 0, right: 0, ease: Circ.easeOut})
-                .fromTo(".name", .2, {opacity: 0}, {opacity: 1})
-                .to(".title-overlay", .6, {width: '100%'}, "=-.6")
-                .to(".title-overlay", .6, {left: 0, width: 0, ease: Circ.easeOut})
-                .fromTo(".titles", .3, {opacity: 0}, {opacity: 1})
-                .to(".my-box", .6, {scale: 1, opacity: .9, ease: Back.easeOut.config(1.7)})
-                .to(".my-box-border", .6, {opacity: 1})
-                .to(".my-box-border", .3, {x: 20, y: 20, ease: Back.easeOut.config(2)});
+        window.addEventListener("load", () => {
+            timeline.to(".name-overlay", .6, {width: '100%'})
+                    .to(".name-overlay", .6, {width: 0, right: 0, ease: Circ.easeOut})
+                    .to(".name", .2, {opacity: 1})
+                    .to(".title-overlay", .6, {width: '100%'}, "=-.6")
+                    .to(".title-overlay", .6, {left: 0, width: 0, ease: Circ.easeOut})
+                    .to(".titles", .3, {opacity: 1})
+                    .to(".my-box", .6, {scale: 1, opacity: .9, ease: Back.easeOut.config(1.7)})
+                    .to(".my-box-border", .6, {opacity: 1})
+                    .to(".my-box-border", .3, {x: 20, y: 20, ease: Back.easeOut.config(2)})
+                    .to(".my-box", .6, {opacity: 1});
+        });
 
         this.myParallax();
     }
@@ -131,7 +134,7 @@ export default {
             right: 0;
             bottom: 0;
             left: 0;
-            box-shadow: 0 0 0 8px #8a8a8a;
+            box-shadow: 0 0 0 8px #555555;
             opacity: 0;
             z-index: 1;
         }
@@ -153,6 +156,7 @@ export default {
                 // white-space: nowrap;
                 position: relative;
                 z-index: 1;
+                opacity: 0;
             }
 
             .name-overlay {
@@ -174,7 +178,9 @@ export default {
                 font-family: $ff4;
                 letter-spacing: 4px;
                 font-size: 1.5rem;
+                font-weight: 600;
                 color: #303030;
+                opacity: 0;
             }
 
             .title-overlay {
@@ -219,7 +225,6 @@ export default {
                 .titles {
                     margin-top: 1rem;
                     font-size: 1.2rem;
-                    font-weight: 600;
                 }
             }
         }

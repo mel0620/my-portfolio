@@ -65,95 +65,214 @@
 	</q-drawer> -->
 
 	<header class="my-header my-header--sticky">
-	  <div class="container">
-		<nav class="my-nav">
-		  <div class="brand" @click="$router.push('/')">
-			<img width="30" src="statics/rc.svg" alt class="brand-mobile img-fluid" />
-		  </div>
-		  <q-space></q-space>
-		  <q-btn
-			flat
-			dense
-			round
-			@click="leftDrawerOpen = !leftDrawerOpen"
-			icon="mdi-text"
-			class="flip"
-			aria-label="Menu"
-		  />
-		</nav>
-	  </div>
+		<div class="container">
+			<nav class="my-nav">
+				<div class="brand" @click="$router.push('/')">
+					<img width="30" src="statics/rc.svg" alt class="brand-mobile img-fluid" />
+				</div>
+				<q-space></q-space>
+				<!-- <q-btn
+					flat
+					dense
+					round
+					icon="mdi-text"
+					class="flip nav-cta"
+					aria-label="Menu"
+					@click="navAction"
+				/> -->
+				<button class="nav-cta nav-cta--open">
+					<q-icon name="mdi-text" class="flip"></q-icon>
+				</button>
+			</nav>
+		</div>
 	</header>
 
+	<div class="my-drawer">
+		<div class="container">
+			<div class="close-wrapper">
+				<button class="nav-cta nav-cta--close">
+					<q-icon name="mdi-close" class="flip"></q-icon>
+				</button>
+			</div>
+			<div class="links-wrapper">
+				<div class="links">
+					<a class="links__item" href="javascript:" @click="$router.push('/')">Home</a>
+					<a class="links__item" href="#aboutme">About Me</a>
+					<a class="links__item" href="javascript:">Education and Experience</a>
+					<a class="links__item" href="#skills">My Skills</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<q-page-container>
-	  <router-view />
+		<router-view />
 	</q-page-container>
   </q-layout>
 </template>
 
 <script>
-import ScrollOut from "scroll-out";
-import FullNav from "../components/FullNav";
+import ScrollOut from "scroll-out"
+import FullNav from "../components/FullNav"
+import {TweenMax, Power2, TimelineLite} from "gsap/TweenMax"
 
 export default {
-  name: "MyLayout",
-  components: {
-	FullNav
-  },
-  data() {
-	return {
-	  leftDrawerOpen: false
-	};
-  },
-  mounted() {
-	ScrollOut({
-	  targets: ".my-header--sticky",
-	  offset: 960
-	});
-  }
+	name: "MyLayout",
+	components: {
+		FullNav
+	},
+	data() {
+		return {
+			leftDrawerOpen: false
+		};
+	},
+	methods: {
+		navAction() {
+			const navButtonOpen = document.querySelector(".nav-cta--open");
+			const navButtonClose = document.querySelector(".nav-cta--close");
+
+			const tl = new TimelineLite({paused: true, reversed: true});
+
+			tl.to('.my-header', .3, {
+				opacity: 0,
+			}).to('.my-drawer', .3, {
+				width: '100%',
+				zIndex: 101,
+			}).from('.nav-cta--close', .3, {
+				opacity: 0
+			}).staggerFrom('.links__item', .3, {
+				opacity: 0,
+				y: -5
+			}, .1)
+
+			navButtonOpen.addEventListener("click", () => {
+				tl.play();
+				// this.toggleTween(tl)
+			})
+
+			navButtonClose.addEventListener("click", () => {
+				tl.reverse();
+				// this.toggleTween(tl)
+			})
+		},
+		closeTween() {
+			tl.reverse();
+		},
+		toggleTween(tween) {
+			tween.reversed() ? tween.play() : tween.reverse();
+		}
+	},
+	mounted() {
+		ScrollOut({
+			targets: ".my-header--sticky",
+			offset: 960
+		});
+
+		this.navAction();
+
+		// document.getElementById('cta').addEventListener('click', function() {
+		// 	TweenMax.to('.panel', 1.5, {scaleY: 1, height:'100vh', ease: Circ.easeOut });
+		// 	TweenMax.to('#light', 1, {opacity: 1, y: 0, delay: 1, ease: Back.easeOut.config(1.7)});
+		// 	TweenMax.to('p', 1, {opacity: 1, y: 20, delay: 1.4});
+		// 	TweenMax.to('.box', 3, {opacity: 1, scale: 1, ease: Elastic.easeOut.config(1, 0.3)});
+		// })
+	}
 };
 </script>
 
 <style lang="scss">
 .my-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 99;
-  transition: .3s all ease-in-out;
-
-  .my-nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 98;
 	transition: .3s all ease-in-out;
-	display: flex;
-	padding: 1.5rem 0;
-  }
+
+	.my-nav {
+		transition: .3s all ease-in-out;
+		display: flex;
+		align-items: center;
+		padding: 1.2rem 0;
+		position: relative;
+	}
 }
 
 .my-header--sticky[data-scroll="in"] {
 	position: fixed;
-	z-index: 99;
+	// z-index: 101;
 	background-color: $grey-2;
 
 	.my-nav {
 		display: flex;
-		padding: 0.625rem 0;
+		padding: 8px 0;
+	}
+}
+
+.nav-cta {
+	cursor: pointer;
+	outline: none;
+	border: 0;
+	background-color: transparent;
+	border-radius: 100%;
+	font-size: 24px;
+	display: flex;
+}
+
+.nav-cta--close {
+	@extend .nav-cta;
+	position: fixed;
+	right: 0;
+	color: #fff;
+	opacity: 1;
+	margin: 1rem;
+}
+
+.my-drawer {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 0;
+	left: 0;
+	background-color: rgba(#000, .8);
+	z-index: 0;
+
+	.links-wrapper {
+		text-align: center;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		
+		.links {
+			display: grid;
+			grid-gap: 1rem;
+
+			a {
+				font-family: $ff4;
+				text-decoration: none;
+				color: #fff;
+				font-size: 1.5rem;
+			}
+		}
 	}
 }
 
 .main-header {
-  // border-bottom: 1px solid #eaeaea;
-  // box-shadow: 0 2px 16px rgba(#000, .12);
-  transition: 0.3s all ease-in-out;
-  background-color: $grey-2;
-  &:hover {
-	filter: invert(1);
-  }
-  .brand-desktop {
-	position: absolute;
-	bottom: -35px;
-	z-index: 5;
-	border-radius: 100%;
-	box-shadow: 0 0 8px rgba(#000, 0.3);
-  }
+	// border-bottom: 1px solid #eaeaea;
+	// box-shadow: 0 2px 16px rgba(#000, .12);
+	transition: 0.3s all ease-in-out;
+	background-color: $grey-2;
+	&:hover {
+		filter: invert(1);
+	}
+	.brand-desktop {
+		position: absolute;
+		bottom: -35px;
+		z-index: 5;
+		border-radius: 100%;
+		box-shadow: 0 0 8px rgba(#000, 0.3);
+	}
 }
 </style>
