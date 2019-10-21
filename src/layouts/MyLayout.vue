@@ -95,11 +95,11 @@
 				</button>
 			</div>
 			<div class="links-wrapper">
-				<div class="links">
-					<a class="links__item" href="#home" >Home</a>
-					<a class="links__item" href="#aboutme">About Me</a>
-					<a class="links__item" href="javascript:">Education and Experience</a>
-					<a class="links__item" href="#skills">My Skills</a>
+				<div class="links" id="navlink">
+					<a class="links__item" title="Home" href="#home" >Home</a>
+					<a class="links__item" title="About" href="#aboutme">About Me</a>
+					<a class="links__item" title="Education" href="#education">Education and Experience</a>
+					<a class="links__item" title="Skills" href="#skills">My Skills</a>
 				</div>
 			</div>
 		</div>
@@ -115,6 +115,7 @@
 import ScrollOut from "scroll-out"
 import FullNav from "../components/FullNav"
 import {TweenMax, Power2, TimelineLite} from "gsap/TweenMax"
+// import VanillaScrollspy from 'vanillajs-scrollspy'
 
 export default {
 	name: "MyLayout",
@@ -157,16 +158,19 @@ export default {
 		},
 		toggleTween(tween) {
 			tween.reversed() ? tween.play() : tween.reverse();
-		}
+		},
 	},
 	mounted() {
+		// const navbar = document.querySelector('#navlink');
+		// const scrollspy = new VanillaScrollspy(navbar, 1000, 'easeInOutQuint');
+		// scrollspy.init();
+
 		ScrollOut({
 			targets: ".my-header--sticky",
 			offset: 960
 		});
 
 		this.navAction();
-
 		// document.getElementById('cta').addEventListener('click', function() {
 		// 	TweenMax.to('.panel', 1.5, {scaleY: 1, height:'100vh', ease: Circ.easeOut });
 		// 	TweenMax.to('#light', 1, {opacity: 1, y: 0, delay: 1, ease: Back.easeOut.config(1.7)});
@@ -245,12 +249,19 @@ export default {
 		.links {
 			display: grid;
 			grid-gap: 1rem;
+			width: max-content;
+			margin: auto;
 
-			a {
+			&__item {
 				font-family: $ff4;
 				text-decoration: none;
-				color: #fff;
+				color: rgba(#fff, .8);
 				font-size: 1.5rem;
+				transition: .3s all ease-in-out;
+
+				&:hover, &.active {
+					color: orange;
+				}
 			}
 		}
 	}
