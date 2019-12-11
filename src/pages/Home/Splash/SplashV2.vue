@@ -1,5 +1,5 @@
 <template>
-    <q-page class="splash-v2 rellax" data-rellax-speed="-7" id="home">
+    <q-page class="splash-v2 rellax" data-rellax-speed="7" id="home">
         <div class="splash-overlay"></div>
         <div class="container">
             <!-- <div class="hero-v2 lax" data-lax-opacity="200 1, 100 1, 0 0" data-lax-anchor="self"> -->
@@ -16,11 +16,13 @@
                 </div>
             </div>
         </div>
-        <img class="box-filled lax" data-rellax-speed="2" data-lax-preset="spin" src="../../../statics/splash/box-filled.svg" alt="">
-        <img class="box-outlined lax" data-rellax-speed="1" data-lax-preset="spin" src="../../../statics/splash/box-outlined.svg" alt="">
-        <img class="stagger-line lax" data-lax-preset="leftToRight" src="../../../statics/splash/stagger-line.svg" alt="">
-        <img class="dots lax" data-lax-preset="linger" src="../../../statics/splash/dots.svg" alt="">
-        <img class="stagger-arrow lax" data-lax-preset="linger" data-rellax-speed="1" src="../../../statics/splash/stagger-arrow.svg" alt="">
+        <img class="box-outlined lax" style="transform: rotate(90deg)" data-lax-preset="spin" src="../../../statics/splash/box-outlined.svg" alt="">
+        <img class="box-filled lax" style="transform: rotate(90deg)" data-lax-preset="spin" src="../../../statics/splash/box-filled.svg" alt="">
+        <img class="stagger-line lax" data-lax-preset="leftToRight eager" src="../../../statics/splash/stagger-line.svg" alt="">
+        <img class="stagger-line2 lax" data-lax-preset="rightToLeft" src="../../../statics/splash/stagger-line.svg" alt="">
+        <img class="dots" data-rellax-speed="-2" src="../../../statics/splash/dots.svg" alt="">
+        <img class="stagger-arrow" data-rellax-speed="10" src="../../../statics/splash/stagger-arrow.svg" alt="">
+        <img class="backslashes" data-rellax-speed="10" src="../../../statics/splash/backslashes.svg" alt="">
     </q-page>
 </template>
 
@@ -38,18 +40,20 @@ export default {
     },
     methods: {
         myParallax() {
-            window.onload = function() {
-                lax.setup() // init
+            // window.onload = function() {}
+            lax.setup() // init
 
-                const updateLax = () => {
-                    lax.update(window.scrollY)
-                    window.requestAnimationFrame(updateLax)
-                }
-
+            const updateLax = () => {
+                lax.update(window.scrollY)
                 window.requestAnimationFrame(updateLax)
             }
 
+            window.requestAnimationFrame(updateLax)
+
             var rellax = new Rellax('.splash-v2');
+            var rellax2 = new Rellax('.stagger-arrow');
+            var rellax3 = new Rellax('.dots');
+            var rellax4 = new Rellax('.backslashes');
         }
     },
     mounted () {
@@ -72,17 +76,6 @@ export default {
 
         this.myParallax();
 
-		lax.setup({
-			breakpoints: { small: 0, large: 992 }
-		})
-
-		const updateLax = () => {
-			lax.update(window.scrollY)
-			window.requestAnimationFrame(updateLax)
-		}
-
-		window.requestAnimationFrame(updateLax)
-
         // particlesJS.load('particles-js', '../../../assets/particles.json', function() {
         //     console.log('callback - particles-js config loaded');
         // });
@@ -93,7 +86,7 @@ export default {
 <style lang="scss">
 .splash-v2 {
     // background: var(--splash-bg-light);
-    background-color: #e2e2e2;
+    background-color: #fff;
     // background: linear-gradient(90deg, rgba(#fff, .8), rgba(orange, .5),), url('../../../statics/splash-bg.jpg');
     // background-image: url('../../../statics/splash-bg.jpg');
     background-repeat: no-repeat;
@@ -146,7 +139,7 @@ export default {
             right: 0;
             bottom: 0;
             left: 0;
-            background-color: #fff;
+            background-color: #eee;
             opacity: 0;
             z-index: 2;
             transform: scale(0);
@@ -273,7 +266,6 @@ export default {
         top: -30px;
         left: -30px;
         width: 125px;
-        // z-index: 50;
         opacity: .5;
     }
 
@@ -281,33 +273,43 @@ export default {
         position: absolute;
         top: 50px;
         left: 50px;
-        width: 100px;
-        // z-index: 50;
+        width: 80px;
         opacity: .2;
     }
 
     .stagger-line {
         position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 150px;
-        // z-index: 50;
+        bottom: 25px;
+        left: -250px;
+        width: 100px;
+    }
+
+    .stagger-line2 {
+        position: absolute;
+        top: 150px;
+        right: -500px;
+        width: 80px;
     }
 
     .dots {
         position: absolute;
-        top: 0;
-        right: 0;
-        width: 80px;
-        // z-index: 50;
+        top: 25px;
+        right: 25px;
+        width: 50px;
     }
 
     .stagger-arrow {
         position: absolute;
-        bottom: 0;
-        right: 200px;
-        width: 30px;
-        // z-index: 50;
+        bottom: -10px;
+        right: 125px;
+        width: 20px;
+    }
+
+    .backslashes {
+        position: absolute;
+        bottom: -10px;
+        left: 25px;
+        width: 15px;
     }
 }
 </style>
