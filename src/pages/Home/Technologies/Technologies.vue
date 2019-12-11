@@ -191,7 +191,7 @@ export default {
                 // background-color: #fff;
 
                 padding: 3rem;
-                // box-shadow: 0 3px 20px 5px rgba(#000, .08);
+                box-shadow: 0 3px 20px 5px rgba(#000, .08);
                 // border-radius: 5px;
                 position: relative;
                 min-height: 125px;
@@ -252,7 +252,7 @@ export default {
 
                 &:hover {
                     background-color: #fff;
-                    box-shadow: 0 3px 20px 5px rgba(#000, .08);
+                    // box-shadow: 0 3px 20px 5px rgba(#000, .08);
 
                     &::before {
                         transform: scale(1.1);

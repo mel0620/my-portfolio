@@ -10,7 +10,7 @@
                 </div>
                 <div class="paragraph">
                     <p class="paragraph__item">Hi, I am Rommel Cuneta! I'm a Web Designer and a Frontend Developer focused on modern and latest trend design with a skill in web animation. I'm a graduate of Bachelor of Science in Information Technology. Passionate in design, coding and music.</p>
-                    <q-btn class="text-capitalize" color="orange" outline label="Download CV"></q-btn>
+                    <q-btn @click="downloadResume()" class="text-capitalize" color="orange" outline label="Download Resume"></q-btn>
                 </div>
             </div>
         </div>
@@ -39,7 +39,10 @@ export default {
 
                 window.requestAnimationFrame(updateLax)
             }
-        }
+        },
+        downloadResume() {
+            window.open("https://1drv.ms/b/s!An6oxnEfxsrxsj_8hp6jcnpa_3gh?e=tfoqOs", "_blank")
+        } 
     },
     mounted () {
         var tl = new TimelineMax({onUpdate:updatePercentage});
@@ -86,7 +89,6 @@ export default {
     position: relative;
     background-color: #1c1c1c;
     background: #292929;
-    // background: radial-gradient(circle, #292929 0%, #1c1c1c 53%, #1c1c1c 100%);
 
     .vertical-text {
         position: absolute;

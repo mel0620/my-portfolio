@@ -16,6 +16,11 @@
                 </div>
             </div>
         </div>
+        <img class="box-filled lax" data-rellax-speed="2" data-lax-preset="spin" src="../../../statics/splash/box-filled.svg" alt="">
+        <img class="box-outlined lax" data-rellax-speed="1" data-lax-preset="spin" src="../../../statics/splash/box-outlined.svg" alt="">
+        <img class="stagger-line lax" data-lax-preset="leftToRight" src="../../../statics/splash/stagger-line.svg" alt="">
+        <img class="dots lax" data-lax-preset="linger" src="../../../statics/splash/dots.svg" alt="">
+        <img class="stagger-arrow lax" data-lax-preset="linger" data-rellax-speed="1" src="../../../statics/splash/stagger-arrow.svg" alt="">
     </q-page>
 </template>
 
@@ -23,6 +28,7 @@
 import {TweenMax, Power2, TimelineLite} from "gsap/TweenMax"
 import lax from 'lax.js'
 import Rellax from "rellax"
+// import "particles.js"
 
 export default {
     data (){
@@ -49,7 +55,9 @@ export default {
     mounted () {
         const timeline = new TimelineLite()
 
-        window.addEventListener("load", () => {
+        // window.addEventListener("load", () => {
+        // });
+        setTimeout(() => {
             timeline.to(".name-overlay", .6, {width: '100%'})
                     .to(".name-overlay", .6, {width: 0, right: 0, ease: Circ.easeOut})
                     .to(".name", .2, {opacity: 1})
@@ -59,10 +67,25 @@ export default {
                     .to(".my-box", .6, {scale: 1, opacity: .9, ease: Back.easeOut.config(1.7)})
                     .to(".my-box-border", .6, {opacity: 1})
                     .to(".my-box-border", .3, {x: 20, y: 20, ease: Back.easeOut.config(2)})
-                    .to(".my-box", .6, {opacity: 1});
-        });
+                    .to(".my-box", .6, {opacity: .8});
+        }, 2000)
 
         this.myParallax();
+
+		lax.setup({
+			breakpoints: { small: 0, large: 992 }
+		})
+
+		const updateLax = () => {
+			lax.update(window.scrollY)
+			window.requestAnimationFrame(updateLax)
+		}
+
+		window.requestAnimationFrame(updateLax)
+
+        // particlesJS.load('particles-js', '../../../assets/particles.json', function() {
+        //     console.log('callback - particles-js config loaded');
+        // });
     }
 }
 </script>
@@ -70,8 +93,9 @@ export default {
 <style lang="scss">
 .splash-v2 {
     // background: var(--splash-bg-light);
-    // background: linear-gradient(rgba(#fff, .5), rgba(#fff, .5)), url('../../../statics/splash-bg.jpg');
-    background-image: url('../../../statics/splash-bg.jpg');
+    background-color: #e2e2e2;
+    // background: linear-gradient(90deg, rgba(#fff, .8), rgba(orange, .5),), url('../../../statics/splash-bg.jpg');
+    // background-image: url('../../../statics/splash-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -242,6 +266,48 @@ export default {
                 }
             }
         }
+    }
+
+    .box-outlined {
+        position: absolute;
+        top: -30px;
+        left: -30px;
+        width: 125px;
+        // z-index: 50;
+        opacity: .5;
+    }
+
+    .box-filled {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        width: 100px;
+        // z-index: 50;
+        opacity: .2;
+    }
+
+    .stagger-line {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 150px;
+        // z-index: 50;
+    }
+
+    .dots {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 80px;
+        // z-index: 50;
+    }
+
+    .stagger-arrow {
+        position: absolute;
+        bottom: 0;
+        right: 200px;
+        width: 30px;
+        // z-index: 50;
     }
 }
 </style>
