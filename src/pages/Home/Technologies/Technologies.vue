@@ -52,12 +52,12 @@ export default {
                     color: '#cc629a',
                     knob: 75
                 },
-                {
-                    name: 'Stylus',
-                    logo: '../../statics/tech/stylus.svg',
-                    color: '#333333',
-                    knob: 70
-                },
+                // {
+                //     name: 'Stylus',
+                //     logo: '../../statics/tech/stylus.svg',
+                //     color: '#333333',
+                //     knob: 70
+                // },
                 {
                     name: 'Bootstrap',
                     logo: '../../statics/tech/bootstrap.svg',

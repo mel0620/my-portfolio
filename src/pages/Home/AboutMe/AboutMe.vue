@@ -41,7 +41,7 @@ export default {
             }
         },
         downloadResume() {
-            window.open("https://1drv.ms/b/s!An6oxnEfxsrxsj_8hp6jcnpa_3gh?e=tfoqOs", "_blank")
+            window.open("https://1drv.ms/b/s!An6oxnEfxsrxvWlSiS4l4B7dCZy1?e=1QYCur", "_blank")
         } 
     },
     mounted () {
