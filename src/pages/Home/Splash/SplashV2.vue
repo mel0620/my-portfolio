@@ -168,7 +168,7 @@ export default {
                 font-family: $ff4;
                 text-transform: uppercase;
                 font-weight: 700;
-                color: #1a1a1a;
+                color: #151515;
                 letter-spacing: 4px;
                 // white-space: nowrap;
                 position: relative;
@@ -180,7 +180,7 @@ export default {
                 position: absolute;
                 top: 0;
                 bottom: 0;
-                background-color: #1c1c1c;
+                background-color: #131313;
                 z-index: 5;
             }
         }

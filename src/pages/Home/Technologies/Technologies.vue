@@ -116,19 +116,19 @@ export default {
                     name: 'Photoshop',
                     logo: '../../statics/tech/photoshop.svg',
                     color: '#0359e8',
-                    knob: 70
+                    knob: 80
                 },
                 {
                     name: 'Illustrator',
                     logo: '../../statics/tech/illustrator.svg',
                     color: '#fb7e2a',
-                    knob: 65
+                    knob: 70
                 },
                 {
                     name: 'XD',
                     logo: '../../statics/tech/xd.svg',
                     color: '#fb1bbd',
-                    knob: 60
+                    knob: 80
                 },
             ]
         }
@@ -141,7 +141,7 @@ export default {
         const controller = new ScrollMagic.Controller();
 
         tl.from(".section-title--tech", .5, {y: 50, opacity: 0});
-        tl.from(".bottom-line--tech", .6, {opacity: 0, color: '#1c1c1c', width: 0});
+        tl.from(".bottom-line--tech", .6, {opacity: 0, color: '#151515', width: 0});
 
         tl2.staggerFrom(".gallery-type__item", .2, {opacity: 0, y: -10, delay: 1}, 0.1)
 

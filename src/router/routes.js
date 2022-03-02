@@ -14,7 +14,7 @@ const routes = [{
 		}]
 	},
 	{
-		path: '/design-gallery/websites',
+		path: '/works',
 		component: () => import('pages/Collection/CollectionWebsites.vue')
 	},
 ]

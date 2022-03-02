@@ -87,8 +87,8 @@ export default {
     padding: 24px 0;
     padding-bottom: 5rem;
     position: relative;
-    background-color: #1c1c1c;
-    background: #292929;
+    background-color: #151515;
+    background: #151515;
 
     .vertical-text {
         position: absolute;
