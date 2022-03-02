@@ -23,8 +23,8 @@ export default {
             section_text: 'Works',
             works: [
                 {
-                    name: 'Lala Story',
-                    site: '../../statics/works/lala.jpg',
+                    name: 'Antville',
+                    site: '../../statics/works/06.jpg',
                     color: '#151515'
                 },
                 {
@@ -33,13 +33,18 @@ export default {
                     color: '#151515'
                 },
                 {
-                    name: 'GRROW',
-                    site: '../../statics/works/grrow.jpg',
+                    name: 'Digima House',
+                    site: '../../statics/works/digima.jpg',
                     color: '#151515'
                 },
                 {
-                    name: 'Digima',
-                    site: '../../statics/works/digima.jpg',
+                    name: 'Lala Story',
+                    site: '../../statics/works/lala.jpg',
+                    color: '#151515'
+                },
+                {
+                    name: 'GRROW',
+                    site: '../../statics/works/grrow.jpg',
                     color: '#151515'
                 },
                 {
