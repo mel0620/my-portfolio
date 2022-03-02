@@ -217,18 +217,19 @@ export default {
             }
 
             @media screen and (max-width: 500px) {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(2, 1fr);
                 grid-gap: 1rem;
 
                 &__item {
                     &::before {
-                        background-size: 60px;
+                        background-size: cover;
+                        background-position: top;
                     }
                 }
             }
 
             @media screen and (max-width: 321px) {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(1, 1fr);
                 grid-gap: 1rem;
             }
         }
