@@ -98,8 +98,8 @@
 				<div class="links" id="navlink">
 					<a class="links__item" title="Home" href="#home" >Home</a>
 					<a class="links__item" title="About" href="#aboutme">About Me</a>
-					<!-- <a class="links__item" title="Education" href="#education">Education and Experience</a> -->
 					<a class="links__item" title="Skills" href="#skills">My Skills</a>
+					<a class="links__item" title="Education" href="#works">Works</a>
 				</div>
 			</div>
 		</div>
